@@ -14,6 +14,7 @@ const H3 = styled.h3`
   color: #2e2a27;
 `;
 
+
 function ChoiceBoard() {
   const { t } = useTranslation();
 
