@@ -10,25 +10,32 @@ export type ButtonProps = {
     onClick: Function,
 
     /** Button is primary (for bootstrap css) */
-    isPrimary?: boolean
+    isPrimary?: boolean,
+
+    /** Other Properties, to be passed as parameter to onClick */
+    props?: any
 }
 
 type ButtonListProps = {
 
     /** List of ButtonProps */
-    listButtons: Array<ButtonProps>
+    listButtons: Array<ButtonProps>,
+
+    /** Other Properties, to be passed as parameter to onClick */
+    props?: any
 }
 
 function Button({
     buttonLabel,
     onClick,
-    isPrimary = false
+    isPrimary = false,
+    props
 }: ButtonProps) {
     
     const onButtonClick = (event: MouseEvent) => {
         event.stopPropagation(); // It is necessary because it could trigger twice.
         if (onClick) {
-            onClick(event)
+            onClick(event, props);
         }
     }
 
@@ -43,7 +50,10 @@ function Button({
     )
 }
 
-function ButtonsOptions({listButtons}: ButtonListProps) {
+function ButtonsOptions({
+    listButtons, 
+    props
+    }: ButtonListProps) {
 
     return (
         <div>
@@ -52,6 +62,7 @@ function ButtonsOptions({listButtons}: ButtonListProps) {
                     buttonLabel={theButton.buttonLabel}
                     onClick={theButton.onClick}
                     isPrimary={theButton.isPrimary}
+                    props={props}
                 />) 
             })}
         </div>
