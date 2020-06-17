@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import ButtonsOption, {ButtonProps} from './ButtonsOption'
 
-type CardProps = {
+export type CardProps = {
     /** card title placed on top of the card */
     title?: string,
 
@@ -71,7 +71,16 @@ function Card({
                 {title && <h2 className="card-title text-primary">{title}</h2>}
                 {paragraphAndImage}
                 {buttonLabel && <button className="btn btn-primary mt-auto" onClick={onButtonClick}>{buttonLabel}</button>}
-                {listButtons && <ButtonsOption listButtons={listButtons} />}
+                {listButtons && <ButtonsOption 
+                                        listButtons={listButtons} 
+                                        props={{
+                                            title,
+                                            paragraph,
+                                            imageURL,
+                                            elementsPlacement,
+                                            buttonLabel,
+                                            onClick
+                                        }} />}
             </div>
             
         </div>

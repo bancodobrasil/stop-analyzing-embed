@@ -10,7 +10,7 @@ const components = {
 function Index(props) {
 
     const { mode } = props;
-    const TheComponent = components[mode] ?components[mode] : components.choiceMode;
+    const TheComponent = components[mode] ? components[mode] : components.choiceMode;
 
 
     return (
