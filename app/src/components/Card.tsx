@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+import ButtonsOption, {ButtonProps} from './ButtonsOption'
 
 type CardProps = {
     /** card title placed on top of the card */
@@ -25,6 +26,9 @@ type CardProps = {
 
     /** function invoked when the card or button is clicked */
     onClick?: Function,
+
+    /** list of buttons, following the Type ButtonProps */
+    listButtons?: Array<ButtonProps>
 }
 
 function Card({
@@ -33,7 +37,8 @@ function Card({
     imageURL,
     elementsPlacement,
     buttonLabel,
-    onClick
+    onClick,
+    listButtons
 }: CardProps) {
 
     let paragraphAndImage = <>
@@ -61,12 +66,14 @@ function Card({
 
 
     return (
-        <div className="card h-100" onClick={onCardClick}>
+        <div className="card h-100" onClick={onCardClick} >
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
                 {title && <h2 className="card-title text-primary">{title}</h2>}
                 {paragraphAndImage}
                 {buttonLabel && <button className="btn btn-primary mt-auto" onClick={onButtonClick}>{buttonLabel}</button>}
+                {listButtons && <ButtonsOption listButtons={listButtons} />}
             </div>
+            
         </div>
     )
 }
