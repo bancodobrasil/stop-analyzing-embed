@@ -2,6 +2,10 @@ import React, { MouseEvent } from 'react';
 import ButtonsOption, {ButtonProps} from './ButtonsOption'
 
 export type CardProps = {
+
+    /** card unique identified */
+    id: string,
+
     /** card title placed on top of the card */
     title?: string,
 
@@ -32,6 +36,7 @@ export type CardProps = {
 }
 
 function Card({
+    id,
     title,
     paragraph,
     imageURL,
@@ -55,12 +60,26 @@ function Card({
 
     const onCardClick = (event: MouseEvent) => {
         if (!buttonLabel && onClick) {
-            onClick(event)
+            onClick(event, {
+                id,
+                title,
+                paragraph,
+                imageURL,
+                elementsPlacement,
+                buttonLabel
+            })
         }
     }
     const onButtonClick = (event: MouseEvent) => {
         if (onClick) {
-            onClick(event)
+            onClick(event, {
+                id,
+                title,
+                paragraph,
+                imageURL,
+                elementsPlacement,
+                buttonLabel
+            })
         }
     }
 
@@ -74,6 +93,7 @@ function Card({
                 {listButtons && <ButtonsOption 
                                         listButtons={listButtons} 
                                         props={{
+                                            id,
                                             title,
                                             paragraph,
                                             imageURL,

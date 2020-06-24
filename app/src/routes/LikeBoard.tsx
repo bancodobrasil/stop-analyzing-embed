@@ -24,6 +24,7 @@ function LikeBoard() {
         <div className="row text-center">
             <div className="col-lg-12 mb-4">
                 <Card
+                    id="X"
                     title="Like Mode Choice"
                     paragraph="That's a good choice!"
                     imageURL="https://picsum.photos/seed/x1/200/300"
