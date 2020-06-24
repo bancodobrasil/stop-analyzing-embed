@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+import { CardProps } from './Card';
 // import * as Icon from 'react-feather';
 
 export type ButtonProps = {
@@ -13,7 +14,7 @@ export type ButtonProps = {
     isPrimary?: boolean,
 
     /** Other Properties, to be passed as parameter to onClick */
-    props?: any
+    props?: CardProps
 }
 
 type ButtonListProps = {
@@ -22,7 +23,7 @@ type ButtonListProps = {
     listButtons: Array<ButtonProps>,
 
     /** Other Properties, to be passed as parameter to onClick */
-    props?: any
+    props?: CardProps
 }
 
 function Button({
