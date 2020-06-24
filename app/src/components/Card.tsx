@@ -1,7 +1,10 @@
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 
-type CardProps = {
+export type CardProps = {
+
+  id?: string;
+
   /** card title placed on top of the card */
   title?: string;
 
