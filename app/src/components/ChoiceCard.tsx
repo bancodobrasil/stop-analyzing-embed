@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
-import ButtonsOption, {ButtonProps} from './ButtonsOption'
+import CardButton from './CardButton'
 
-export type CardProps = {
+export type ChoiceCardProps = {
 
     /** card unique identified */
     id: string,
@@ -29,22 +29,18 @@ export type CardProps = {
     buttonLabel?: string,
 
     /** function invoked when the card or button is clicked */
-    onClick?: Function,
-
-    /** list of buttons, following the Type ButtonProps */
-    listButtons?: Array<ButtonProps>
+    onClick?: Function
 }
 
-function Card({
+function ChoiceCard({
     id,
     title,
     paragraph,
     imageURL,
     elementsPlacement,
     buttonLabel,
-    onClick,
-    listButtons
-}: CardProps) {
+    onClick
+}: ChoiceCardProps) {
 
     let paragraphAndImage = <>
         {imageURL && <img alt={imageURL} src={imageURL} />}
@@ -83,28 +79,16 @@ function Card({
         }
     }
 
-
     return (
         <div className="card h-100" onClick={onCardClick} >
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
                 {title && <h2 className="card-title text-primary">{title}</h2>}
                 {paragraphAndImage}
-                {buttonLabel && <button className="btn btn-primary mt-auto" onClick={onButtonClick}>{buttonLabel}</button>}
-                {listButtons && <ButtonsOption 
-                                        listButtons={listButtons} 
-                                        props={{
-                                            id,
-                                            title,
-                                            paragraph,
-                                            imageURL,
-                                            elementsPlacement,
-                                            buttonLabel,
-                                            onClick
-                                        }} />}
+                {buttonLabel && <CardButton  buttonLabel={buttonLabel} onClick={onButtonClick} isPrimary={true} cardProps={{id,title}}></CardButton>}
             </div>
             
         </div>
     )
 }
 
-export default Card
+export default ChoiceCard

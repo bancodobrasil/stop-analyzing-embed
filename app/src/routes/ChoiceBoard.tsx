@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Card, { CardProps } from '../components/Card';
+import ChoiceCard, { ChoiceCardProps } from '../components/ChoiceCard';
 
 type ChoiceBoardCards = {
-    left: CardProps,
-    right: CardProps
+    left: ChoiceCardProps,
+    right: ChoiceCardProps
 }
 
 function ChoiceBoard() {
@@ -76,7 +76,7 @@ function ChoiceBoard() {
         setCardsState(cardsState);
     }
 
-    let likedCards: Array<CardProps> = [];
+    let likedCards: Array<ChoiceCardProps> = [];
     let [likedCardsState, setLikedCardsState] = useState(likedCards);
 
     let cards: ChoiceBoardCards;
@@ -91,7 +91,7 @@ function ChoiceBoard() {
     return (
         <div className="row text-center">
             <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
                     id={cardsState.left.id}
                     title={cardsState.left.title}
                     paragraph={cardsState.left.paragraph}
@@ -101,7 +101,7 @@ function ChoiceBoard() {
                 />
             </div>
             <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
                     id={cardsState.right.id}
                     title={cardsState.right.title}
                     paragraph={cardsState.right.paragraph}
@@ -115,7 +115,7 @@ function ChoiceBoard() {
                     {likedCardsState.length > 0  && `Liked choices:`}
                     {likedCardsState &&  likedCardsState.map((theCardLiked, index) => {
                         return (
-                            <p>
+                            <p key={index}>
                                 {theCardLiked.title} &nbsp;
                             </p>) 
                     })}
