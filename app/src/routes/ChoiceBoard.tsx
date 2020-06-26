@@ -2,12 +2,12 @@ import React, { Suspense, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
-import Card, { CardProps } from '../components/Card';
+import ChoiceCard, { ChoiceCardProps } from '../components/ChoiceCard';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 type ChoiceBoardCards = {
-  left: CardProps,
-  right: CardProps
+  left: ChoiceCardProps,
+  right: ChoiceCardProps
 }
 
 const H3 = styled.h3`
@@ -69,7 +69,6 @@ function ChoiceBoard() {
     return cards[whatever];
 }
 
-
 const commonOnClick = (e, cardProps) => {
     console.log(`Button LIKE Clicked at ${cardProps.title} - ${cardProps.id}`);
     likedCardsState.push(cardProps);
@@ -90,7 +89,7 @@ const commonOnClick = (e, cardProps) => {
     setCardsState(cardsState);
 }
 
-let likedCards: Array<CardProps> = [];
+let likedCards: Array<ChoiceCardProps> = [];
 let [likedCardsState, setLikedCardsState] = useState(likedCards);
 
 let cards: ChoiceBoardCards;
@@ -121,14 +120,14 @@ let [cardsState, setCardsState] = useState(cards);
             </div>
             <div className="row text-center">
               <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
                   imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2160&q=80"
                 />
               </div>
               <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
                   imageURL="https://picsum.photos/seed/x2/200/300"
