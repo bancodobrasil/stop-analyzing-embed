@@ -1,7 +1,8 @@
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
+import CardButton from './CardButton'
 
-export type CardProps = {
+export type ChoiceCardProps = {
 
   id?: string;
 
@@ -55,14 +56,15 @@ const Para = styled.p`
   color: #59cd90;
 `;
 
-function Card({
+function ChoiceCard({
+  id,
   title,
   paragraph,
   imageURL,
   elementsPlacement,
   buttonLabel,
   onClick,
-}: CardProps) {
+}: ChoiceCardProps) {
   let paragraphAndImage = (
     <>
       {imageURL && <IMG src={imageURL} />}
@@ -87,7 +89,14 @@ function Card({
 
   const onButtonClick = (event: MouseEvent) => {
     if (onClick) {
-      onClick(event);
+        onClick(event, {
+            id,
+            title,
+            paragraph,
+            imageURL,
+            elementsPlacement,
+            buttonLabel
+        });
     }
   };
 
@@ -110,4 +119,4 @@ function Card({
   );
 }
 
-export default Card;
+export default ChoiceCard
