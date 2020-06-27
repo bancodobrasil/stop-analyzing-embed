@@ -9,9 +9,18 @@ So, **let's start contributing! Open an issue asking for a task to be done by yo
 
 That's it. Just make yourself at home and good luck!
 
+## Steps to send the contribution
+
+To contribute to this project you must fork this projetct, get an issue and make your resulting Pull Request.
+
 ## Technical Aspects
 
 1. This project uses **React with Typescript and React Hooks**. So, although it is not required for you to already have experience with this stack, its going to more comfort to.
 
 1. The project doesn't use any CSS preprocessor (like SASS or LESS). It uses CSS native variables and is heavily relied on Bootstrap4
 
+1. We recommend using https://www.conventionalcommits.org/ for the commit messages. You don't need to be strict to it, but that's a good reference.
+
+1. Remember to reference the **issue** you are working on your commit messages, like `git commit -a -m "<your_commit_message>. refs #8"`
+
+1. When opening a PR, if its an UI issue that you are working on and hence needs to be evaluated visually, its a good practive to provide some prints or gifs of the result. It helps the PR reviewer to give you a faster feedback.
