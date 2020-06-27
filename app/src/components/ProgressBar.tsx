@@ -3,11 +3,12 @@ import React from 'react';
 import './ProgressBar.css';
 
 function ProgressBar({
-  progress
-}:{progress?:Number}) {
+  progress,
+  className
+}:{className?:string,progress?:number}) {
   return (
-    <div className={`mt-2 progress progress-moved progress-${progress}`}>
-      <div className="progress-bar"></div>
+    <div className={`progress progress-moved ${className}`}>
+      <div className={`progress-bar progress-${progress}`}></div>
     </div>
   );
 }
