@@ -9,6 +9,10 @@ So, **let's start contributing! Open an issue asking for a task to be done by yo
 
 That's it. Just make yourself at home and good luck!
 
+## Steps to send the contribution
+
+To contribute to this project you must fork this projetct, get an issue and make your resulting Pull Request.
+
 ## Technical Aspects
 
 1. This project uses **React with Typescript and React Hooks**. So, although it is not required for you to already have experience with this stack, its going to more comfort to.
