@@ -1,3 +1,28 @@
-.progressBar {
-  border: 1px solid red;
+.progress {
+  padding: 0.25rem;
+  border-radius: 30px;
+}
+
+.progress-bar {
+  height: 0.5rem;
+  border-radius: 30px;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved .progress-bar {
+  width: 85%;
+  background-color: #f6648c;
+  animation: progressAnimation 6s;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 5%;
+    background-color: #f9bcca;
+  }
+  100% {
+    width: 85%;
+    background-color: #ef476f;
+  }
 }

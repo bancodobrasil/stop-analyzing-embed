@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import "./ProgressBar.css";
+import './ProgressBar.css';
 
 function ProgressBar() {
-  return <div className="progressBar">
-    {/* Put here your HTML code */}
-    Progress Bar
-  </div>;
+  return (
+    <div className="mt-2 progress progress-moved">
+      <div className="progress-bar"></div>
+    </div>
+  );
 }
 
 export default ProgressBar;
