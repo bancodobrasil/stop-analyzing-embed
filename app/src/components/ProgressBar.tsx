@@ -3,15 +3,22 @@ import React from "react";
 import "./ProgressBar.css";
 
 function ProgressBar({
-  progress,
+  width,
   className,
 }: {
   className?: string;
-  progress?: number;
+  width?: number;
 }) {
   return (
-    <div className={`progress progress-moved ${className}`}>
-      <div className={`progress-bar progress-${progress}`}></div>
+    <div className={`progress`}>
+      <div
+        role={`progressbar`}
+        className={`progress-bar`}
+        aria-valuenow={width}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        style={{ width: width + "%" }}
+      ></div>
     </div>
   );
 }
