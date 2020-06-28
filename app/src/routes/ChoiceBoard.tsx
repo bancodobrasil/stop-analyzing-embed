@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import ProgressBar from "../components/ProgressBar";
 
 import styled from "styled-components";
+import TimerComponent from "../components/TimerComponent/TimerComponent";
 
 const H3 = styled.h3`
   width: 100%;
@@ -21,6 +22,11 @@ function ChoiceBoard() {
             <H3>Which one would you like to choose?</H3>
             <div className="col-lg-12 mb-4">
               <ProgressBar width={0} />
+            <H3>
+              Which one would you like to choose? <TimerComponent timeout={15} />
+            </H3>
+            <div className="col-lg-12 mb-4">
+              <ProgressBar />
             </div>
           </div>
           <div className="row text-center">
@@ -37,6 +43,7 @@ function ChoiceBoard() {
                 paragraph="Nope, that's a good choice!"
                 imageURL="https://picsum.photos/seed/x2/200/300"
               />
+              <Card title="Choice 2" paragraph="Nope, that's a good choice!" imageURL="https://picsum.photos/seed/x2/200/300" />
             </div>
           </div>
         </div>
