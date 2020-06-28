@@ -1,38 +1,45 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import Card from "./Card";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Card from './Card';
 
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom/extend-expect';
 
-test("should render: title. Should not render: paragraph, image", () => {
-  const imgURLTest = "http://image";
-  const { queryByText, queryByAltText } = render(<Card title="Title" />);
-  expect(queryByText("Title")).toBeInTheDocument();
-  expect(queryByText("Paragraph")).toBeNull();
-  expect(queryByAltText(imgURLTest)).toBeNull();
+test('renders a card image', () => {
+    const testTitle = 'this is a title';
+    const testPara = 'this is a paragraph';
+    const testImg = 'sampleImage.gif';
+    const testLabel = 'this is a description for image';
+    const { container } = render(
+        <Card
+            title={testTitle}
+            paragraph={testPara}
+            imageURL={testImg}
+            ariaLabel={testLabel}
+        />
+    );
+
+    screen.debug();
+    screen.queryByText('this is a title');
+    screen.queryAllByText('this is a paragraph');
+    screen.queryByRole('img');
+    screen.queryByLabelText(testLabel);
+    // I am not sure if this is correct and it is necessary check image extension file here.
+    // probably we would already have a type checker from API in real practice.
+    screen.queryByText((testImg) => testImg.match(/jpe?g|png|gif$/));
+
+    // to check if image container div comes before paragraph.
+    expect(
+        container.firstChild?.firstChild?.firstChild?.nextSibling
+    ).toBeEmptyDOMElement();
 });
 
-test("should render: title and image. Should not render: paragraph", () => {
-  const imgURLTest = "http://image";
-  const { queryByText, queryByAltText } = render(<Card title="Title" imageURL={imgURLTest} />);
-  expect(queryByText("Title")).toBeInTheDocument();
-  expect(queryByText("Paragraph")).toBeNull();
-  expect(queryByAltText(imgURLTest)).toBeInTheDocument();
-});
+test('reders elementsPlacement', () => {
+    const testImg = 'sampleImage.gif';
+    const testPara = 'this is a paragraph';
+    const { container } = render(
+        <Card elementsPlacement="pi" imageURL={testImg} paragraph={testPara} />
+    );
 
-test("should render: title and paragraph. Should not render: image", () => {
-  const paragraphTextTest = "Paragraph test";
-  const { queryByText, queryByAltText } = render(<Card title="Title" paragraph={paragraphTextTest} />);
-  expect(queryByText("Title")).toBeInTheDocument();
-  expect(queryByText(paragraphTextTest)).toBeInTheDocument();
-  expect(queryByAltText("http://image")).toBeNull();
-});
-
-test("should render: title, paragraph and image", () => {
-  const paragraphTextTest = "Paragraph test";
-  const imgURLTest = "http://image";
-  const { queryByText, queryByAltText } = render(<Card title="Title" paragraph={paragraphTextTest} imageURL={imgURLTest} />);
-  expect(queryByText("Title")).toBeInTheDocument();
-  expect(queryByText(paragraphTextTest)).toBeInTheDocument();
-  expect(queryByAltText(imgURLTest)).toBeInTheDocument();
+    // to check the order of the DOM in case of having the elementsPlacement props
+    expect(container.firstChild?.firstChild).toHaveTextContent(testPara);
 });
