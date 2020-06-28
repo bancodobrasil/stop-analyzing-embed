@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../components/Card";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from "../components/ProgressBar/ProgressBar";
 
 import styled from "styled-components";
 import TimerComponent from "../components/TimerComponent/TimerComponent";
@@ -19,14 +19,15 @@ function ChoiceBoard() {
       <div className="row vh-100">
         <div className="col-12 my-auto">
           <div className="row text-center">
-            <H3>Which one would you like to choose?</H3>
             <div className="col-lg-12 mb-4">
-              <ProgressBar width={0} />
-            <H3>
-              Which one would you like to choose? <TimerComponent timeout={15} />
-            </H3>
-            <div className="col-lg-12 mb-4">
-              <ProgressBar />
+              <H3>
+                Which one would you like to choose? <TimerComponent timeout={15} />
+              </H3>
+              <div className="col-lg-12 mb-4">
+                <ProgressBar progress={0} />
+                <ProgressBar progress={20} />
+                <ProgressBar progress={50} />
+              </div>
             </div>
           </div>
           <div className="row text-center">
@@ -38,11 +39,7 @@ function ChoiceBoard() {
               />
             </div>
             <div className="col-lg-6 mb-4">
-              <Card
-                title="Choice 2"
-                paragraph="Nope, that's a good choice!"
-                imageURL="https://picsum.photos/seed/x2/200/300"
-              />
+              <Card title="Choice 2" paragraph="Nope, that's a good choice!" imageURL="https://picsum.photos/seed/x2/200/300" />
               <Card title="Choice 2" paragraph="Nope, that's a good choice!" imageURL="https://picsum.photos/seed/x2/200/300" />
             </div>
           </div>
