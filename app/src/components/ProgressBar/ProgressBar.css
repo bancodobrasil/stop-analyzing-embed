@@ -1,0 +1,11 @@
+.progress {
+  padding: 0.25rem;
+  border-radius: 30px;
+}
+
+.progress-bar {
+  height: 0.5rem;
+  border-radius: 30px;
+  background-color: #f6648c;
+  transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
+}

@@ -24,7 +24,6 @@ function ChoiceBoard() {
                 Which one would you like to choose? <TimerComponent timeout={15} />
               </H3>
               <div className="col-lg-12 mb-4">
-                <ProgressBar progress={0} />
                 <ProgressBar progress={20} />
                 <ProgressBar progress={50} />
               </div>
