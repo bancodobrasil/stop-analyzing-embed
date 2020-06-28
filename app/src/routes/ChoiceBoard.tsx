@@ -1,11 +1,13 @@
 import React from 'react';
 import Card from '../components/Card';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from "../components/ProgressBar/ProgressBar";
+import TimerComponent from '../components/TimerComponent/TimerComponent';
+
 import image1 from './../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from './../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 
 import styled from 'styled-components';
-import TimerComponent from '../components/TimerComponent/TimerComponent';
+
 
 const H3 = styled.h3`
     width: 100%;
@@ -16,6 +18,7 @@ const H3 = styled.h3`
 `;
 
 function ChoiceBoard() {
+
     return (
         <section className="container">
             <div className="row vh-100">
@@ -27,6 +30,8 @@ function ChoiceBoard() {
                         </H3>
                         <div className="col-lg-12 mb-4">
                             <ProgressBar />
+                            <ProgressBar progress={20} />
+                            <ProgressBar progress={50} />                          
                         </div>
                     </div>
                     <div className="row text-center">
@@ -51,6 +56,7 @@ function ChoiceBoard() {
             </div>
         </section>
     );
+
 }
 
 export default ChoiceBoard;
