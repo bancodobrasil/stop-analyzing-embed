@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.board {
+  float: center;
+  min-width: 300px;
+  /* border: solid 1px black; */
+  min-height: 600px;
+}
+
+.dropLikeArea {
+  float: right;
+  min-width: 10%;
+  /* border: solid 1px red; */
+  min-height: 600px;
+}
+
+.dropDislikeArea {
+  float: left;
+  min-width: 10%;
+  /* border: solid 1px blue; */
+  min-height: 600px;
+}
