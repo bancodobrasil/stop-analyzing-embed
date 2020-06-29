@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { DragEvent } from 'react';
 import CardButton from './CardButton'
 
 export type LikeCardProps = {
@@ -24,10 +24,13 @@ export type LikeCardProps = {
     elementsPlacement?: string,
 
     /** function trigger when LIKE button is tap */
-    onLikeClick?: Function
+    onLikeClick?: Function,
 
     /** function trigger when DESLIKE button is tap */
-    onDeslikeClick?: Function
+    onDislikeClick?: Function,
+
+    /** set if the card is dragable or not */
+    draggable?: boolean
 }
 
 function LikeCard({
@@ -37,8 +40,23 @@ function LikeCard({
     imageURL,
     elementsPlacement,
     onLikeClick,
-    onDeslikeClick
+    onDislikeClick,
+    draggable
 }: LikeCardProps) {
+
+    const dragStart = (e: DragEvent) => {
+
+        e.dataTransfer.setData('card_id', id);
+
+        // It was added to hide the card during the drag&drop
+        setTimeout(() => {
+            document.getElementById(id)!.style.display = 'none'
+        }, 0);
+    }
+
+    const dragOver = e => {
+        e.stopPropagation();
+    }
 
     let paragraphAndImage = <>
         {imageURL && <img alt={imageURL} src={imageURL} />}
@@ -54,13 +72,19 @@ function LikeCard({
 
 
     return (
-        <div className="card h-100" >
+        <div 
+            id={id}
+            className="card h-100"  
+            draggable={draggable}
+            {...(draggable ?  {onDragStart:dragStart} : {} )}
+            {...(draggable ?  {onDragOver:dragOver} : {} )}
+        >
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
                 {title && <h2 className="card-title text-primary">{title}</h2>}
                 {paragraphAndImage}
                 <div>
                     {onLikeClick && <CardButton  buttonLabel="Like" onClick={onLikeClick} isPrimary={true} cardProps={{id,title}}></CardButton>}
-                    {onDeslikeClick && <CardButton  buttonLabel="Dislike" onClick={onDeslikeClick} isPrimary={false} cardProps={{id,title}}></CardButton>}
+                    {onDislikeClick && <CardButton  buttonLabel="Dislike" onClick={onDislikeClick} isPrimary={false} cardProps={{id,title}}></CardButton>}
                 </div>
             </div>
             
