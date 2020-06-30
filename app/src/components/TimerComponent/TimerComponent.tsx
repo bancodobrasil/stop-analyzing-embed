@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 function TimerComponent({ timeout }: { timeout: number }) {
   const { remainingTime, rendered, setRendered } = useTimerComponentModel({ timeout });
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
