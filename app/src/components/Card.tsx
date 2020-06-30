@@ -1,5 +1,5 @@
-import React, { MouseEvent } from "react";
-import styled from "styled-components";
+import React, { MouseEvent } from 'react';
+import styled from 'styled-components';
 
 type CardProps = {
   /** card title placed on top of the card */
@@ -56,7 +56,14 @@ const Para = styled.p`
   color: #59cd90;
 `;
 
-function Card({ title, paragraph, imageURL, elementsPlacement, buttonLabel, onClick }: CardProps) {
+function Card({
+  title,
+  paragraph,
+  imageURL,
+  elementsPlacement,
+  buttonLabel,
+  onClick,
+}: CardProps) {
   let paragraphAndImage = (
     <>
       {imageURL && <IMG image={imageURL} />}
@@ -64,7 +71,7 @@ function Card({ title, paragraph, imageURL, elementsPlacement, buttonLabel, onCl
     </>
   );
 
-  if (elementsPlacement === "pi") {
+  if (elementsPlacement === 'pi') {
     paragraphAndImage = (
       <>
         {paragraph && <Para className="card-text">{paragraph}</Para>}
@@ -78,6 +85,8 @@ function Card({ title, paragraph, imageURL, elementsPlacement, buttonLabel, onCl
       onClick(event);
     }
   };
+
+  
   const onButtonClick = (event: MouseEvent) => {
     if (onClick) {
       onClick(event);
@@ -90,7 +99,7 @@ function Card({ title, paragraph, imageURL, elementsPlacement, buttonLabel, onCl
         {title && <H2>{title}</H2>}
         {paragraphAndImage}
         {buttonLabel && (
-          <button className="btn btn-primary mt-auto" onClick={onButtonClick}>
+          <button type="button" className="btn btn-primary mt-auto" onClick={onButtonClick}>
             {buttonLabel}
           </button>
         )}

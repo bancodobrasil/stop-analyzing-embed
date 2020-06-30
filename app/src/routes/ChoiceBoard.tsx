@@ -1,9 +1,9 @@
-import React from "react";
-import Card from "../components/Card";
-import ProgressBar from "../components/ProgressBar/ProgressBar";
+import React from 'react';
+import styled from 'styled-components';
+import Card from '../components/Card';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 
-import styled from "styled-components";
-import TimerComponent from "../components/TimerComponent/TimerComponent";
+import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 const H3 = styled.h3`
   width: 100%;
@@ -21,7 +21,8 @@ function ChoiceBoard() {
           <div className="row text-center">
             <div className="col-lg-12 mb-4">
               <H3>
-                Which one would you like to choose? <TimerComponent timeout={15} />
+                Which one would you like to choose?{' '}
+                <TimerComponent timeout={15} />
               </H3>
               <div className="col-lg-12 mb-4">
                 <ProgressBar progress={20} />
@@ -38,8 +39,16 @@ function ChoiceBoard() {
               />
             </div>
             <div className="col-lg-6 mb-4">
-              <Card title="Choice 2" paragraph="Nope, that's a good choice!" imageURL="https://picsum.photos/seed/x2/200/300" />
-              <Card title="Choice 2" paragraph="Nope, that's a good choice!" imageURL="https://picsum.photos/seed/x2/200/300" />
+              <Card
+                title="Choice 2"
+                paragraph="Nope, that's a good choice!"
+                imageURL="https://picsum.photos/seed/x2/200/300"
+              />
+              <Card
+                title="Choice 2"
+                paragraph="Nope, that's a good choice!"
+                imageURL="https://picsum.photos/seed/x2/200/300"
+              />
             </div>
           </div>
         </div>
