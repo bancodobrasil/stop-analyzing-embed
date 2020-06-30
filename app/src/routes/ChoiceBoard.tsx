@@ -15,7 +15,7 @@ const H3 = styled.h3`
 `;
 
 function ChoiceBoard() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Suspense fallback="loading">
