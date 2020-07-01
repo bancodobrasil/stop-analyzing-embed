@@ -94,7 +94,7 @@ function Card({
   };
 
   return (
-    <div className="card h-100" onClick={onCardClick}>
+    <div role="region" className="card h-100" onClick={onCardClick}>
       <CardWrapper>
         {title && <H2>{title}</H2>}
         {paragraphAndImage}

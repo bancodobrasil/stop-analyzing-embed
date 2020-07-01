@@ -12,6 +12,7 @@
           }
       }
     },
+    "ignorePatterns": ["*.d.ts"],
     "rules": {
       "object-curly-spacing": ["warn", "always"],
       "no-unused-vars": [
@@ -62,7 +63,7 @@
           ]
         }
       ],
-      "react/default-props-match-prop-types": ["error", { "allowRequiredDefaults": true }],
+      "react/require-default-props": [2, { "forbidDefaultForRequired": true, "ignoreFunctionalComponents": true }],
       "react/jsx-props-no-spreading": "off",
       "import/prefer-default-export": "off",
       "react/jsx-boolean-value": "off",
@@ -70,6 +71,11 @@
       "react/no-unescaped-entities": "off",
       "react/jsx-one-expression-per-line": "off",
       "react/jsx-wrap-multilines": "off",
-      "react/destructuring-assignment": "off"
+      "react/destructuring-assignment": "off",
+      "jsx-a11y/click-events-have-key-events" : "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
+      "no-param-reassign": "off"
+
     }
   }
