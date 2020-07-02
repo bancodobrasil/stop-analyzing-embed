@@ -1,5 +1,5 @@
-import React, { MouseEvent } from "react";
-import styled from "styled-components";
+import React, { MouseEvent } from 'react';
+import styled from 'styled-components';
 
 type CardProps = {
   /** card title placed on top of the card */
@@ -67,7 +67,7 @@ function Card({
     </>
   );
 
-  if (elementsPlacement === "pi") {
+  if (elementsPlacement === 'pi') {
     paragraphAndImage = (
       <>
         {paragraph && <Para className="card-text">{paragraph}</Para>}
@@ -81,6 +81,8 @@ function Card({
       onClick(event);
     }
   };
+
+  
   const onButtonClick = (event: MouseEvent) => {
     if (onClick) {
       onClick(event);
@@ -88,12 +90,12 @@ function Card({
   };
 
   return (
-    <div className="card h-100" onClick={onCardClick}>
+    <div role="region" className="card h-100" onClick={onCardClick}>
       <CardWrapper>
         {title && <H2>{title}</H2>}
         {paragraphAndImage}
         {buttonLabel && (
-          <button className="btn btn-primary mt-auto" onClick={onButtonClick}>
+          <button type="button" className="btn btn-primary mt-auto" onClick={onButtonClick}>
             {buttonLabel}
           </button>
         )}
