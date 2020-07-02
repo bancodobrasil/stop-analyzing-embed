@@ -39,13 +39,9 @@ const H2 = styled.h2`
   color: #59cd90;
 `;
 
-const IMG = styled.div`	
-    background-image: url("${(props) => props.image}");	
-    background-position: center center;	
-    background-repeat: no-repeat;	
-    background-size: cover;	
-    width: 100%;	
-    height: 400px;	
+const IMG = styled.img`
+  width: 100%;
+  height: 400px;
 `;
 
 const Para = styled.p`
@@ -66,7 +62,7 @@ function Card({
 }: CardProps) {
   let paragraphAndImage = (
     <>
-      {imageURL && <IMG image={imageURL} />}
+      {imageURL && <IMG src={imageURL} />}
       {paragraph && <Para className="card-text">{paragraph}</Para>}
     </>
   );

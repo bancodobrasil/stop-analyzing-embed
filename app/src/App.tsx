@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import ChoiceBoard from './routes/ChoiceBoard';
@@ -9,7 +9,9 @@ function App() {
       <Router>
         <Switch>
           <Route path="/">
-            <ChoiceBoard />
+            <Suspense fallback="loading">
+              <ChoiceBoard />
+            </Suspense>
           </Route>
         </Switch>
       </Router>
