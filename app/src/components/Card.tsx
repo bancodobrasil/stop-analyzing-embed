@@ -82,7 +82,6 @@ function Card({
     }
   };
 
-  
   const onButtonClick = (event: MouseEvent) => {
     if (onClick) {
       onClick(event);
@@ -95,7 +94,11 @@ function Card({
         {title && <H2>{title}</H2>}
         {paragraphAndImage}
         {buttonLabel && (
-          <button type="button" className="btn btn-primary mt-auto" onClick={onButtonClick}>
+          <button
+            type="button"
+            className="btn btn-primary mt-auto"
+            onClick={onButtonClick}
+          >
             {buttonLabel}
           </button>
         )}
