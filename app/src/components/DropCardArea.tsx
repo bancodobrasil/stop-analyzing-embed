@@ -21,7 +21,8 @@ function DropCardArea ({
         const cardId = event.dataTransfer.getData('card_id');
 
         const card = document.getElementById(cardId);
-        card!.style.display = 'none';
+        if (card) 
+            card.style.display = 'none';
 
         if (onDrop) {
             onDrop(event, {cardId});
@@ -34,6 +35,7 @@ function DropCardArea ({
 
     return (
         <div 
+            data-testid="dropCardArea"
             className={className}
             onDrop={drop}
             onDragOver={dragOver}
