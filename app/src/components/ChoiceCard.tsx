@@ -1,35 +1,35 @@
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
-import CardButton from './CardButton'
 
 export type ChoiceCardProps = {
 
-  id?: string;
+    /** card identifier */
+    id?: string;
 
-  /** card title placed on top of the card */
-  title?: string;
+    /** card title placed on top of the card */
+    title?: string;
 
-  /** small text placed on the middle or bottom of the card, dependending o the `elementsPlacement` attribute. Default: placed below the image (if present) */
-  paragraph?: string;
+    /** small text placed on the middle or bottom of the card, dependending o the `elementsPlacement` attribute. Default: placed below the image (if present) */
+    paragraph?: string;
 
-  /** image placed on the middle or bottom of the card, dependending o the `elementsPlacement` attribute. Default: placed bellow the title (if present)  */
-  imageURL?: string;
+    /** image placed on the middle or bottom of the card, dependending o the `elementsPlacement` attribute. Default: placed bellow the title (if present)  */
+    imageURL?: string;
 
-  /** how the elements are positioned on the card. Possible options:
-   * - pi
-   * - ip
-   * pi = paragraph then image
-   * ip = image then paragraph
-   */
-  elementsPlacement?: string;
+    /** how the elements are positioned on the card. Possible options:
+     * - pi
+     * - ip
+     * pi = paragraph then image
+     * ip = image then paragraph
+     */
+    elementsPlacement?: string;
 
-  /** if present, displays a button with this label and the onClick event is triggered only by the button.
-   *  if not present, no button is shown and the onClick event is triggered by the Card click event
-   * */
-  buttonLabel?: string;
+    /** if present, displays a button with this label and the onClick event is triggered only by the button.
+     *  if not present, no button is shown and the onClick event is triggered by the Card click event
+     * */
+    buttonLabel?: string;
 
-  /** function invoked when the card or button is clicked */
-  onClick?: Function;
+    /** function invoked when the card or button is clicked */
+    onClick?: Function;
 };
 
 const CardWrapper = styled.div`
@@ -57,63 +57,70 @@ const Para = styled.p`
 `;
 
 function ChoiceCard({
-  id,
-  title,
-  paragraph,
-  imageURL,
-  elementsPlacement,
-  buttonLabel,
-  onClick,
+    id,
+    title,
+    paragraph,
+    imageURL,
+    elementsPlacement,
+    buttonLabel,
+    onClick,
 }: ChoiceCardProps) {
-  let paragraphAndImage = (
-    <>
-      {imageURL && <IMG src={imageURL} />}
-      {paragraph && <Para className="card-text">{paragraph}</Para>}
-    </>
-  );
-
-  if (elementsPlacement === 'pi') {
-    paragraphAndImage = (
-      <>
-        {paragraph && <Para className="card-text">{paragraph}</Para>}
-        {imageURL && <IMG image={imageURL} />}
-      </>
+    let paragraphAndImage = (
+        <>
+            {imageURL && <IMG src={imageURL} />}
+            {paragraph && <Para className="card-text">{paragraph}</Para>}
+        </>
     );
-  }
 
-  const onCardClick = (event: MouseEvent) => {
-    if (!buttonLabel && onClick) {
-      onClick(event);
+    if (elementsPlacement === 'pi') {
+        paragraphAndImage = (
+            <>
+                {paragraph && <Para className="card-text">{paragraph}</Para>}
+                {imageURL && <IMG image={imageURL} />}
+            </>
+        );
     }
-  };
 
-  
-  const onButtonClick = (event: MouseEvent) => {
-    if (onClick) {
-        onClick(event, {
-            id,
-            title,
-            paragraph,
-            imageURL,
-            elementsPlacement,
-            buttonLabel
-        });
-    }
-  };
+    const onCardClick = (event: MouseEvent) => {
+        if (!buttonLabel && onClick) {
+            onClick(event, {
+                id,
+                title,
+                paragraph,
+                imageURL,
+                elementsPlacement,
+                buttonLabel
+            });
+        }
+    };
 
-  return (
-    <div role="region" className="card h-100" onClick={onCardClick}>
-      <CardWrapper>
-        {title && <H2>{title}</H2>}
-        {paragraphAndImage}
-        {buttonLabel && (
-          <button type="button" className="btn btn-primary mt-auto" onClick={onButtonClick}>
-            {buttonLabel}
-          </button>
-        )}
-      </CardWrapper>
-    </div>
-  );
+
+    const onButtonClick = (event: MouseEvent) => {
+        if (onClick) {
+            onClick(event, {
+                id,
+                title,
+                paragraph,
+                imageURL,
+                elementsPlacement,
+                buttonLabel
+            });
+        }
+    };
+
+    return (
+        <div role="region" className="card h-100" onClick={onCardClick}>
+            <CardWrapper>
+                {title && <H2>{title}</H2>}
+                {paragraphAndImage}
+                {buttonLabel && (
+                    <button type="button" className="btn btn-primary mt-auto" onClick={onButtonClick}>
+                        {buttonLabel}
+                    </button>
+                )}
+            </CardWrapper>
+        </div>
+    );
 }
 
 export default ChoiceCard
