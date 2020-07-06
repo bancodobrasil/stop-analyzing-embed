@@ -14,7 +14,7 @@ it('should render: title. Should not render: paragraph, image', () => {
     expect(queryByAltText(imgURLTest)).toBeNull()
 })
 
-test('should render: title and image. Should not render: paragraph', () => {
+it('should render: title and image. Should not render: paragraph', () => {
     const imgURLTest = "http://image"
     const { queryByText, queryByAltText } = render(
         <ChoiceCard id="X" title="Title" imageURL={imgURLTest} />
@@ -24,7 +24,7 @@ test('should render: title and image. Should not render: paragraph', () => {
     expect(queryByAltText(imgURLTest)).toBeInTheDocument()
 })
 
-test('should render: title and paragraph. Should not render: image', () => {
+it('should render: title and paragraph. Should not render: image', () => {
     const paragraphTextTest = "Paragraph test"
     const { queryByText, queryByAltText } = render(
         <ChoiceCard id="X" title="Title" paragraph={paragraphTextTest} />
@@ -35,7 +35,7 @@ test('should render: title and paragraph. Should not render: image', () => {
 })
 
 
-test('should render: title, paragraph and image', () => {
+it('should render: title, paragraph and image', () => {
     const paragraphTextTest = "Paragraph test"
     const imgURLTest = "http://image"
     const { queryByText, queryByAltText } = render(

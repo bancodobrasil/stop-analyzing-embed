@@ -1,8 +1,7 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import CardButton from './CardButton'
-
 import '@testing-library/jest-dom'
+import CardButton from './CardButton'
 import { ChoiceCardProps } from './ChoiceCard';
 
 

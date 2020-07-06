@@ -10,9 +10,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/likeMode">
-            <Suspense fallback="loading">
               <LikeBoard />
-            </Suspense>
           </Route>
           <Route path="/">
             <Suspense fallback="loading">

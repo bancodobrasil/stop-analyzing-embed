@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import DropCardArea from './DropCardArea'
 
 
-test('should render: The div with className. ', () => {
+it('should render: The div with className. ', () => {
     const { queryByTestId } = render (
         <DropCardArea className='test' />
     )
@@ -16,7 +16,7 @@ test('should render: The div with className. ', () => {
     expect(node).toHaveClass('test')
 })
 
-test('should render: The div. Simulate drop, check if cardId is on onDrop params ', () => {
+it('should render: The div. Simulate drop, check if cardId is on onDrop params ', () => {
     const fn = jest.fn();
     const { queryByTestId } = render (
         <DropCardArea onDrop={fn} />
