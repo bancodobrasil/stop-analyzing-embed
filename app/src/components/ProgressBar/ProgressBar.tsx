@@ -3,9 +3,8 @@ import React from 'react';
 import './ProgressBar.css';
 
 function ProgressBar({ progress = 0 }: { progress?: number }) {
-  
   let progressBarProgress = progress;
-  
+
   if (progressBarProgress < 0) {
     progressBarProgress = 0;
   }
