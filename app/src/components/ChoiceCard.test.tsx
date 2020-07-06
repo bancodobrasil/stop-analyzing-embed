@@ -4,7 +4,7 @@ import ChoiceCard from './ChoiceCard'
 
 import '@testing-library/jest-dom';
 
-test('should render: title. Should not render: paragraph, image', () => {
+it('should render: title. Should not render: paragraph, image', () => {
     const imgURLTest = "http://image"
     const { queryByText, queryByAltText } = render(
         <ChoiceCard id="X" title="Title" />
