@@ -1,5 +1,5 @@
 {
-    "plugins": ["prettier", "@typescript-eslint"],
+    "plugins": ["prettier", "@typescript-eslint", "simple-import-sort"],
     "extends": ["airbnb-typescript", "react-app", "prettier"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -14,6 +14,8 @@
     },
     "ignorePatterns": ["*.d.ts"],
     "rules": {
+      "import/order": "off",
+      "simple-import-sort/sort": "error",
       "object-curly-spacing": ["warn", "always"],
       "no-unused-vars": [
         "warn",
