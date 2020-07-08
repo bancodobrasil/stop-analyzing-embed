@@ -13,4 +13,4 @@ COPY app temp
 RUN cd temp && npm install && npm run build && cp -R build/. ../. && rm -rf ../temp
 
 # Start local-web-service exposing the app directory
-CMD ["ws", "--port 8000"]
+CMD ["ws", "--port", "8000"]
