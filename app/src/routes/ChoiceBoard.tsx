@@ -1,9 +1,8 @@
 import React, { Suspense } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import Card from '../components/Card';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
-
+import ChoiceCard from '../components/ChoiceCard';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 const H3 = styled.h3`
@@ -14,8 +13,15 @@ const H3 = styled.h3`
   color: #2e2a27;
 `;
 
+
 function ChoiceBoard() {
   const { t } = useTranslation();
+
+  const commonOnClick = (e, card) => {
+    console.log("Card clicked!!")
+    console.log(card)
+}
+
 
   return (
     <Suspense fallback="loading">
@@ -36,25 +42,29 @@ function ChoiceBoard() {
             </div>
             <div className="row text-center">
               <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
+                  id="card1"
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
-                  imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2160&q=80"
+                  imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+                  onClick={commonOnClick}
                 />
               </div>
               <div className="col-lg-6 mb-4">
-                <Card
+                <ChoiceCard
+                  id="card2"
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
                   imageURL="https://picsum.photos/seed/x2/200/300"
+                  onClick={commonOnClick}
                 />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+          </div>
+          </section>
     </Suspense>
-  );
+  )
 }
 
 export default ChoiceBoard;
