@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react';
-import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import ProgressBar from '../components/ProgressBar/ProgressBar';
+import styled from 'styled-components';
+
 import ChoiceCard from '../components/ChoiceCard';
+import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 const H3 = styled.h3`
@@ -13,15 +14,13 @@ const H3 = styled.h3`
   color: #2e2a27;
 `;
 
-
 function ChoiceBoard() {
   const { t } = useTranslation();
 
   const commonOnClick = (e, card) => {
-    console.log("Card clicked!!")
-    console.log(card)
-}
-
+    console.log('Card clicked!!');
+    console.log(card);
+  };
 
   return (
     <Suspense fallback="loading">
@@ -61,10 +60,10 @@ function ChoiceBoard() {
               </div>
             </div>
           </div>
-          </div>
-          </section>
+        </div>
+      </section>
     </Suspense>
-  )
+  );
 }
 
 export default ChoiceBoard;

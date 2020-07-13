@@ -1,8 +1,9 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import ProgressBar from './ProgressBar';
-
 import '@testing-library/jest-dom';
+
+import { render } from '@testing-library/react';
+import React from 'react';
+
+import ProgressBar from './ProgressBar';
 
 const progresses = [10, 20, 40, 55, 12, 33, 88, 99];
 test(`should render 8 ProgressBar with ${progresses.join(' ')} wide`, () => {

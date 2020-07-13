@@ -4,6 +4,7 @@
  */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import useTimerComponentModel from './useTimerComponentModel';
 
 function TimerComponent({ timeout }: { timeout: number }) {

@@ -1,6 +1,6 @@
-import React from 'react';
-
 import './ProgressBar.css';
+
+import React from 'react';
 
 function ProgressBar({ progress = 0 }: { progress?: number }) {
   let progressBarProgress = progress;

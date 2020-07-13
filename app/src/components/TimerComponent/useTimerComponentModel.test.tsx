@@ -1,4 +1,5 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import useTimerComponentModel from './useTimerComponentModel';
 
 test('should test the timeout', async () => {
