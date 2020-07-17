@@ -27,7 +27,7 @@ To run stop-analyzing-embed:
 
 [![Awesome](https://camo.githubusercontent.com/1997c7e760b163a61aba3a2c98f21be8c524be29/68747470733a2f2f617765736f6d652e72652f62616467652e737667)](https://github.com/sindresorhus/awesome)
 
-- [Stop Analyzing API](https://github.com/bancodobrasil/stop-analyzing-api): Golang API used as a backend of Stop Analyzing application
+- [Stop Analyzing API](https://github.com/bancodobrasil/stop-analyzing-api): Golang API used as a backend of [Stop Analyzing application](https://github.com/bancodobrasil/stop-analyzing)
 - [First Contributions Repository](https://github.com/firstcontributions/first-contributions): Help beginners to contribute to open source projects
 - [Contribute to this Project](https://github.com/Syknapse/Contribute-To-This-Project): This is for absolute beginners. If you know how to write and edit an anchor tag <a href="" target=""></a> then you should be able to do it.
 - [Contribute to open source](https://github.com/danthareja/contribute-to-open-source):
