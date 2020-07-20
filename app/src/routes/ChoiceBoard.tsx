@@ -1,10 +1,13 @@
 import React, { Suspense } from 'react';
+import {useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import ChoiceCard from '../components/ChoiceCard';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
+import useChoiceBoardModel from '../components/ChoiceBoard/useChoiceBoardModel';
+import { type } from 'os';
 
 const H3 = styled.h3`
   width: 100%;
@@ -16,10 +19,10 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
+  const {selectedItems, appendSelection} = useChoiceBoardModel(['item1', 'item2']);
 
-  const commonOnClick = (e, card) => {
-    console.log('Card clicked!!');
-    console.log(card);
+  const CommonOnClick = (e, card) => {
+    appendSelection(card);
   };
 
   return (
@@ -46,7 +49,7 @@ function ChoiceBoard() {
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
                   imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-                  onClick={commonOnClick}
+                  onClick={CommonOnClick}
                 />
               </div>
               <div className="col-lg-6 mb-4">
@@ -55,7 +58,7 @@ function ChoiceBoard() {
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
                   imageURL="https://picsum.photos/seed/x2/200/300"
-                  onClick={commonOnClick}
+                  onClick={CommonOnClick}
                 />
               </div>
             </div>
