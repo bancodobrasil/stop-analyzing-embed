@@ -1,13 +1,12 @@
-import React, { Suspense } from 'react';
-import {useEffect} from 'react';
+import { type } from 'os';
+import React, { Suspense, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import useChoiceBoardModel from '../components/ChoiceBoard/useChoiceBoardModel';
 import ChoiceCard from '../components/ChoiceCard';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
-import useChoiceBoardModel from '../components/ChoiceBoard/useChoiceBoardModel';
-import { type } from 'os';
 
 const H3 = styled.h3`
   width: 100%;
@@ -19,7 +18,10 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
-  const {selectedItems, appendSelection} = useChoiceBoardModel(['item1', 'item2']);
+  const { selectedItems, appendSelection } = useChoiceBoardModel([
+    'item1',
+    'item2',
+  ]);
 
   const CommonOnClick = (e, card) => {
     appendSelection(card);
