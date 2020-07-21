@@ -1,19 +1,21 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ChoiceBoard from './routes/ChoiceBoard';
+import LikeBoard from './routes/LikeBoard';
 
 function App() {
   return (
     <main>
       <Router>
         <Switch>
+          <Route path="/likeMode">
+            <LikeBoard />
+          </Route>
           <Route path="/">
-            <ChoiceBoard />
+            <Suspense fallback="loading">
+              <ChoiceBoard />
+            </Suspense>
           </Route>
         </Switch>
       </Router>

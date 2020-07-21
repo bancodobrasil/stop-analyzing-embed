@@ -17,14 +17,37 @@ That's it. Just make yourself at home and good luck!
 
 ## Getting Started
 
-To run stop-analyzing-embed:
-
+To build and run stop-analyzing-embed locally, just follow the instructions bellow. You can either using docker or run it directly using NPM run commands. On both ways, web server will show the hostname on the console, something like this:
+```
+stop-analyzing-embed | Listening on http://738e062f602e:8000, http://127.0.0.1:8000, http://192.168.124.2:8000
 ```
 
+### Using Docker
+To run with docker-compose:
+```
+docker-compose up
+```
+If you prefer work on Dockerfile directly:
+```
+docker build . --tag stop-analyzing-embed:latest
 ```
 
-## Awesome list of other Poppins projects for you to go
+### Using a Development Environment
 
+Make sure to install all the dependencies:
+```
+$ cd app
+$ npm install
+```
+Run de application:
+```
+npm run start
+```
+*Important: make sure you have [NPM](https://www.npmjs.com/get-npm) installed in your machine.*
+
+Thats it! We are ready to go!
+
+## Awesome list of other Poppins projects for you to go 
 [![Awesome](https://camo.githubusercontent.com/1997c7e760b163a61aba3a2c98f21be8c524be29/68747470733a2f2f617765736f6d652e72652f62616467652e737667)](https://github.com/sindresorhus/awesome)
 
 - [Stop Analyzing API](https://github.com/bancodobrasil/stop-analyzing-api): Golang API used as a backend of [Stop Analyzing application](https://github.com/bancodobrasil/stop-analyzing)

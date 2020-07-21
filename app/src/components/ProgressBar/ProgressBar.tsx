@@ -1,24 +1,27 @@
-import React from "react";
+import './ProgressBar.css';
 
-import "./ProgressBar.css";
+import React from 'react';
 
 function ProgressBar({ progress = 0 }: { progress?: number }) {
-  if (progress < 0) {
-    progress = 0;
+  let progressBarProgress = progress;
+
+  if (progressBarProgress < 0) {
+    progressBarProgress = 0;
   }
-  if (progress > 100) {
-    progress = 100;
+  if (progressBarProgress > 100) {
+    progressBarProgress = 100;
   }
   return (
     <div className="progress">
       <div
         role="progressbar"
+        aria-label="Progress Bar to complete the analyze"
         className="progress-bar"
-        aria-valuenow={progress}
+        aria-valuenow={progressBarProgress}
         aria-valuemin={0}
         aria-valuemax={100}
-        style={{ width: progress + "%" }}
-      ></div>
+        style={{ width: `${progressBarProgress}%` }}
+      />
     </div>
   );
 }
