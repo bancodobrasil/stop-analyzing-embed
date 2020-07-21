@@ -19,10 +19,6 @@ That's it. Just make yourself at home and good luck!
 
 To run stop-analyzing-embed:
 
-```
-
-```
-
 ## Awesome list of other Poppins projects for you to go
 
 [![Awesome](https://camo.githubusercontent.com/1997c7e760b163a61aba3a2c98f21be8c524be29/68747470733a2f2f617765736f6d652e72652f62616467652e737667)](https://github.com/sindresorhus/awesome)
