@@ -16,6 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
+    "tailwindcss": "^1.5.2",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -63,7 +64,9 @@
     "prettier": "2.0.5",
     "prettier-eslint": "11.0.0",
     "prettier-eslint-cli": "5.0.0",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "resolutions": {
     "styled-components": "^5"
