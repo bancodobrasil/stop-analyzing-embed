@@ -19,6 +19,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "dev": "REACT_APP_BACKEND_URL=http://localhost:8008 yarn start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
