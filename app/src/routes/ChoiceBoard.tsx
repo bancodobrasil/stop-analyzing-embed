@@ -1,5 +1,4 @@
-import { type } from 'os';
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
