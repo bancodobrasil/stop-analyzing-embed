@@ -22,7 +22,7 @@ function ChoiceBoard() {
     'item2',
   ]);
 
-  const CommonOnClick = (e, card) => {
+  const CommonOnClick = (e, card: never) => {
     appendSelection(card);
   };
 
