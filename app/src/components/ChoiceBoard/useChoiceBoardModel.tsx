@@ -1,30 +1,37 @@
 import { useState } from 'react';
 
-export default (originalOptions) => {
+export default () => {
   // Selected Items
-  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState(Array());
+
+  // Initial choices
+  const initialOptions = [];
+  // useEffect(async () => {
+  //  const response = await fetch(process.REACT_APP_BACKEND_URL);
+  //  initialOptions = [response.body.choices[0], response.body.choices[1]];
+  //})
 
   // All choices
-  const [allOptions, setAllOptions] = useState(originalOptions);
+  const [allOptions, setAllOptions] = useState(initialOptions);
 
   // Progress
   // const [progress, setProgress] = useState(0);
 
-  const appendSelection = (selection: never) => {
+  const appendSelection = async (selection: never) => {
     setSelectedItems([...selectedItems, selection]);
 
-    // Mock POST, not sure if we are going to use axios or fetch
+    // Mock POST
     // This function will not only append the current choice to the list of choices,
     // but also return the two new choices
-    // axios.post(`${process.env.REACT_APP_BACKEND_URL}/items`, {selection})
-    // .then((res) => {
-    //      setProgress(res.body.completeness);
-    //      setAllOptions([res.body.choices[0], res.body.choices[1]]);
-    //      return [res.body.choices[0], res.body.choices[1]]
-    // })
+    // const response = await fetch('http://localhost:8008/items', {method: 'post', body: {selection}});
+    // 
+    // setProgress(response.body.completeness);
+    // setAllOptions([response.body.choices[0], response.body.choices[1]]);
+    // return [response.body.choices[0], response.body.choices[1]];
+    // 
     //
   };
 
-  // will also return newOptions and progress when the back end is set up
+  // will also return progress when the back end is set up
   return { selectedItems, allOptions, appendSelection };
 };

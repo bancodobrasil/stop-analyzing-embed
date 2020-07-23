@@ -17,10 +17,7 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
-  const { selectedItems, appendSelection } = useChoiceBoardModel([
-    'item1',
-    'item2',
-  ]);
+  const { selectedItems, appendSelection } = useChoiceBoardModel();
 
   const CommonOnClick = (e, card: never) => {
     appendSelection(card);
