@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default () => {
   // Selected Items
-  const [selectedItems, setSelectedItems] = useState(Array());
+  const [selectedItems, setSelectedItems] = useState([]);
 
   // Initial choices
   const initialOptions = [];
