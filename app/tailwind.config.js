@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('./src/styles/colors');
 
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.vue'],
+  purge: ['./public/**/*.html', './src/**/*.jsx'],
   theme: {
     extend: {
       colors,

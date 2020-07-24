@@ -1,4 +1,4 @@
-import './index.css';
+import './styles/main.css';
 import './i18n';
 
 import React from 'react';
