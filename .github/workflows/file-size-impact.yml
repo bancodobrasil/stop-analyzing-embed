@@ -23,6 +23,8 @@ jobs:
         run: npm install --prefix ./app
       - name: npm install file-size-impact
         run: npm install --prefix ./.github/workflows/file-size-impact/
+      - name: npm run build app
+        run: npm run build --prefix ./app
       - name: Report file size impact
         run: node ./.github/workflows/file-size-impact/report-file-size-impact.js
         env:
