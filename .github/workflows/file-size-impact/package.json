@@ -1,0 +1,14 @@
+{
+  "name": "stop-analyzing-embed-workflow-file-size-impact",
+  "version": "0.0.1",
+  "description": "",
+  "main": "report-file-size-impact.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiago Stutz",
+  "license": "MIT",
+  "dependencies": {
+    "@jsenv/file-size-impact": "^4.1.0"
+  }
+}
