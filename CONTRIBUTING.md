@@ -29,50 +29,52 @@ To contribute to this project you must fork this projetct, get an issue and make
 
 1. To update your fork with the project master, [follow those instructions](https://gist.github.com/Chaser324/ce0505fbed06b947d962):
 
-  * Add the master of the original project naming it `upstream`:
-  
-  ```bash
-  $ git remote add upstream https://github.com/bancodobrasil/stop-analyzing-embed.git
-  ```
-  
-  * Fetch the `upstream` updated contents:
+- Add the master of the original project naming it `upstream`:
 
-  ```bash
-  $ git fetch upstream
-  ```
+```bash
+$ git remote add upstream https://github.com/bancodobrasil/stop-analyzing-embed.git
+```
 
-  * Check whether it was successfully added:
-  
-  ```bash
-  $ git branch -va  
-  ```
+- Fetch the `upstream` updated contents:
+
+```bash
+$ git fetch upstream
+```
+
+- Check whether it was successfully added:
+
+```bash
+$ git branch -va
+```
 
 If you are working on the master in your forked repo:
 
-  * Checkout the master:
+- Checkout the master:
 
-  ```bash
-  $ git checkout master
-  ```
+```bash
+$ git checkout master
+```
 
-  * Merge the **original repo master** into you forked repo **master** to update it:
-  ```bash
-  $ git merge upstream/master
-  ```
-  
+- Merge the **original repo master** into you forked repo **master** to update it:
+
+```bash
+$ git merge upstream/master
+```
+
 If you are working on a branch in your forked repo:
 
-  * Checkout the master:
+- Checkout the master:
 
-  ```bash
-  $ git checkout <branch_name> # for example: git checkout issue-9
-  ```
+```bash
+$ git checkout <branch_name> # for example: git checkout issue-9
+```
 
-  * Merge the **original repo master** into you forked repo **branch** to update it:
-  ```bash
-  $ git merge upstream/master
-  ```
-  
+- Merge the **original repo master** into you forked repo **branch** to update it:
 
+```bash
+$ git merge upstream/master
+```
 
-  
+## GitHub Actions
+
+1. File Size Impact: checks whether te PR will introduce an abnormal file size to the built bundle of the project
