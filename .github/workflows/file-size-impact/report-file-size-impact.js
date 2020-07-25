@@ -2,11 +2,12 @@ const { reportFileSizeImpact, readGithubWorkflowEnv } = require("@jsenv/file-siz
 
 reportFileSizeImpact({
   ...readGithubWorkflowEnv(),
-  buildCommand: "ls -la ./app/build",
+  projectDirectoryUrl: process.env.GITHUB_WORKSPACE + "/app",
+  buildCommand: "ls -la ./build",
   trackingConfig: {
     "app/build": {
-      "./app/build/**/*": true,
-      "./app/build/**/*.map": false,
+      "./build/**/*": true,
+      "./build/**/*.map": false,
     },
   },
 });
