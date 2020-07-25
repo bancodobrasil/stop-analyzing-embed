@@ -1,0 +1,31 @@
+name: file-size-impact
+
+on: pull_request
+
+jobs:
+  file-size-impact:
+    # Skip workflow for forks because secrets.GITHUB_TOKEN not allowed to post comments
+    if: github.event.pull_request.base.repo.full_name == github.event.pull_request.head.repo.full_name
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [13.12.0]
+    runs-on: ${{ matrix.os }}
+    name: report file size impact
+    steps:
+      - name: Setup git
+        uses: actions/checkout@v2
+      - name: Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: npm install app
+        run: npm install --prefix ./app
+      - name: npm install file-size-impact
+        run: npm install --prefix ./.github/workflows/file-size-impact/
+      - name: npm run build app
+        run: npm run build --prefix ./app
+      - name: Report file size impact
+        run: node ./.github/workflows/file-size-impact/report-file-size-impact.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
