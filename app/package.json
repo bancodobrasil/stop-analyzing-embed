@@ -16,12 +16,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
-    "tailwindcss": "^1.5.2",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
-    "start": "npm run build:css && react-scripts start",
+    "build:css": "tailwindcss build src/styles/tailwind.css -o src/styles/main.css",
+    "dev:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
+    "start": "npm run dev:css && react-scripts start",
     "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -69,7 +69,8 @@
     "prettier-eslint-cli": "5.0.0",
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "tailwindcss": "^1.5.2"
   },
   "resolutions": {
     "styled-components": "^5"
