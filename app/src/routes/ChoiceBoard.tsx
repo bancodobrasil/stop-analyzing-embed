@@ -2,19 +2,23 @@ import React, { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
+import image1 from './../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
+import image2 from './../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
+
 import ChoiceCard from '../components/ChoiceCard';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 const H3 = styled.h3`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-weight: 700;
-  color: #2e2a27;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: #2e2a27;
 `;
 
 function ChoiceBoard() {
+
   const { t } = useTranslation();
 
   const commonOnClick = (e, card) => {
@@ -45,8 +49,9 @@ function ChoiceBoard() {
                   id="card1"
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
-                  imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+                  imageURL={image1}
                   onClick={commonOnClick}
+                  ariaLabel="light pink rose"
                 />
               </div>
               <div className="col-lg-6 mb-4">
@@ -54,8 +59,9 @@ function ChoiceBoard() {
                   id="card2"
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
-                  imageURL="https://picsum.photos/seed/x2/200/300"
+                  imageURL={image2}
                   onClick={commonOnClick}
+                  ariaLabel="pink rose in full bloom"
                 />
               </div>
             </div>

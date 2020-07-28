@@ -29,17 +29,19 @@ export type ChoiceCardProps = {
 
   /** function invoked when the card or button is clicked */
   onClick?: Function;
+
+  ariaLabel?: string;
 };
 
 const CardWrapper = styled.div`
-  width: 100%;
+    width: 100%;
 `;
 
 const H2 = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 2;
-  color: #59cd90;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2;
+    color: #59cd90;
 `;
 
 const IMG = styled.img`
@@ -48,11 +50,11 @@ const IMG = styled.img`
 `;
 
 const Para = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  color: #59cd90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    color: #59cd90;
 `;
 
 function ChoiceCard({
@@ -63,20 +65,25 @@ function ChoiceCard({
   elementsPlacement,
   buttonLabel,
   onClick,
+  ariaLabel,
 }: ChoiceCardProps) {
   let paragraphAndImage = (
     <>
-      {imageURL && <IMG src={imageURL} />}
-      {paragraph && <Para className="card-text">{paragraph}</Para>}
+        {imageURL && (
+            <IMG image={imageURL} role="img" aria-label={ariaLabel} />
+        )}
+        {paragraph && <Para className="card-text">{paragraph}</Para>}
     </>
   );
 
   if (elementsPlacement === 'pi') {
     paragraphAndImage = (
-      <>
-        {paragraph && <Para className="card-text">{paragraph}</Para>}
-        {imageURL && <IMG image={imageURL} />}
-      </>
+        <>
+            {paragraph && <Para className="card-text">{paragraph}</Para>}
+            {imageURL && (
+                <IMG image={imageURL} role="img" aria-label={ariaLabel} />
+            )}
+        </>
     );
   }
 
