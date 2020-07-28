@@ -33,29 +33,29 @@ export type ChoiceCardProps = {
   ariaLabel?: string;
 };
 
-const CardWrapper = styled.div`
-    width: 100%;
-`;
+// const CardWrapper = styled.div`
+//     width: 100%;
+// `;
 
-const H2 = styled.h2`
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 2;
-    color: #59cd90;
-`;
+// const H2 = styled.h2`
+//     font-size: 1.5rem;
+//     font-weight: 700;
+//     line-height: 2;
+//     color: #59cd90;
+// `;
 
-const IMG = styled.img`
-  width: 100%;
-  height: 400px;
-`;
+// const IMG = styled.img`
+//   width: 100%;
+//   height: 400px;
+// `;
 
-const Para = styled.p`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    color: #59cd90;
-`;
+// const Para = styled.p`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 2rem;
+//     color: #59cd90;
+// `;
 
 function ChoiceCard({
   id,
@@ -69,21 +69,29 @@ function ChoiceCard({
 }: ChoiceCardProps) {
   let paragraphAndImage = (
     <>
-        {imageURL && (
-            <IMG image={imageURL} role="img" aria-label={ariaLabel} />
-        )}
-        {paragraph && <Para className="card-text">{paragraph}</Para>}
+      {imageURL && (
+        <img
+          className="w-full img-height"
+          style={{ height: '400px' }}
+          src={imageURL}
+        />
+      )}
+      {paragraph && <p className="text-base py-3 bg-white">{paragraph}</p>}
     </>
   );
 
   if (elementsPlacement === 'pi') {
     paragraphAndImage = (
-        <>
-            {paragraph && <Para className="card-text">{paragraph}</Para>}
-            {imageURL && (
-                <IMG image={imageURL} role="img" aria-label={ariaLabel} />
-            )}
-        </>
+      <>
+        {paragraph && <p className="text-base py-3 bg-white">{paragraph}</p>}
+        {imageURL && (
+          <img
+            className="w-full img-height"
+            style={{ height: '400px' }}
+            src={imageURL}
+          />
+        )}
+      </>
     );
   }
 
@@ -114,9 +122,17 @@ function ChoiceCard({
   };
 
   return (
-    <div role="region" className="card h-100" onClick={onCardClick}>
-      <CardWrapper>
-        {title && <H2>{title}</H2>}
+    <div
+      role="region"
+      className="card h-100 border-0 bg-transparent"
+      onClick={onCardClick}
+    >
+      <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto w-full h-100">
+        {title && (
+          <div className="font-bold text-white text-2xl py-2 bg-accent">
+            {title}
+          </div>
+        )}
         {paragraphAndImage}
         {buttonLabel && (
           <button
@@ -127,7 +143,7 @@ function ChoiceCard({
             {buttonLabel}
           </button>
         )}
-      </CardWrapper>
+      </div>
     </div>
   );
 }
