@@ -67,7 +67,17 @@ function ChoiceCard({
   onClick,
   ariaLabel,
 }: ChoiceCardProps) {
-  let paragraphAndImage = (
+  let subParagraph = (
+    <>
+      {paragraph && (
+        <p className="inline-block font-semibold text-base mb-4 px-3 py-1">
+          {paragraph}
+        </p>
+      )}
+    </>
+  );
+
+  let image = (
     <>
       {imageURL && (
         <img
@@ -76,14 +86,21 @@ function ChoiceCard({
           src={imageURL}
         />
       )}
-      {paragraph && <p className="text-base py-3 bg-white">{paragraph}</p>}
     </>
   );
 
   if (elementsPlacement === 'pi') {
-    paragraphAndImage = (
+    subParagraph = (
       <>
-        {paragraph && <p className="text-base py-3 bg-white">{paragraph}</p>}
+        {paragraph && (
+          <p className="inline-block font-semibold  text-base mb-4 px-3 py-1">
+            {paragraph}
+          </p>
+        )}
+      </>
+    );
+    image = (
+      <>
         {imageURL && (
           <img
             className="w-full img-height"
@@ -127,13 +144,13 @@ function ChoiceCard({
       className="card h-100 border-0 bg-transparent"
       onClick={onCardClick}
     >
-      <div className="max-w-sm rounded overflow-hidden shadow-lg m-auto w-full h-100">
-        {title && (
-          <div className="font-bold text-white text-2xl py-2 bg-accent">
-            {title}
-          </div>
-        )}
-        {paragraphAndImage}
+      <div
+        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
+        style={{ borderRadius: '1rem' }}
+      >
+        {image}
+        {title && <div className="font-bold text-2xl py-2">{title}</div>}
+        {subParagraph}
         {buttonLabel && (
           <button
             type="button"
