@@ -7,7 +7,13 @@ import { useTranslation } from 'react-i18next';
 
 import useTimerComponentModel from './useTimerComponentModel';
 
-function TimerComponent({ timeout }: { timeout: number }) {
+function TimerComponent({
+  timeout,
+  dismissable = false,
+}: {
+  timeout: number;
+  dismissable?: boolean;
+}) {
   const { remainingTime, rendered, setRendered } = useTimerComponentModel({
     timeout,
   });
@@ -20,9 +26,11 @@ function TimerComponent({ timeout }: { timeout: number }) {
           <strong>
             {remainingTime} {t('seconds')}
           </strong>
-          <button type="button" onClick={(_) => setRendered(false)}>
-            {t('Dismiss')}
-          </button>
+          {dismissable && (
+            <button type="button" onClick={(_) => setRendered(false)}>
+              {t('Dismiss')}
+            </button>
+          )}
         </div>
       )}
     </>

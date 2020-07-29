@@ -1420,6 +1420,72 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
+"@jsenv/cancellation@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@jsenv/cancellation/-/cancellation-1.4.1.tgz#de1dc8f1560918fcf68f386b773016bf710bbc58"
+  integrity sha512-PSCHdPLUHcfbRQuoGCnjEenj0on0ii+7WSqzc+35+BW1NpGHdkjMqwnAYTa2UDsjmkhgjxuHOUlMQxCVG3qP7A==
+
+"@jsenv/file-size-impact@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@jsenv/file-size-impact/-/file-size-impact-4.1.0.tgz#37e0c32f7296df4dd0016383d5fc899dd05e57fb"
+  integrity sha512-eYXMZ3sKC0poP6DpdhVa6V0hUAbYl/AV7bX/1hL6IAQEMMiMEdkoREycFCNVerLhdP11pKM6cMDK6OJjYx3VBw==
+  dependencies:
+    "@jsenv/cancellation" "1.4.1"
+    "@jsenv/logger" "3.3.1"
+    "@jsenv/server" "2.6.0"
+    "@jsenv/util" "3.6.0"
+
+"@jsenv/logger@3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@jsenv/logger/-/logger-3.3.1.tgz#dddd12605f81500a3113d66c9a7aea78e95a15da"
+  integrity sha512-Xi3Qtxu/ASi1sgAh+f5Emp6brcMjM1fG+Du7QMPcCKfvYJs/paud6oJLPhjgoPEYgl3XIfiCxZyoX+GCT4Jydg==
+
+"@jsenv/node-signals@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@jsenv/node-signals/-/node-signals-2.0.1.tgz#2ef15a1160cc0f2802edc4d6ce2c62c196452abd"
+  integrity sha512-OXZkSZsegiOI+uueyY1wwx6Z0XpPFf/d/es/Bi1fUBeR/k8PvFyRygM9FgtYpZmJ0FGaEKTYQN+E31dzTru4kw==
+
+"@jsenv/server@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@jsenv/server/-/server-2.6.0.tgz#af39d6af7680a89dd21de31a381129ae82faa5e6"
+  integrity sha512-APT5S2zBMAVuioJP6MfBLujRHORIW42eWmUXIJgdswbROM8F8uUWZV6rpe9Vsj9Ir69woR+vTXxLnLskjBQGeg==
+  dependencies:
+    "@jsenv/cancellation" "1.4.1"
+    "@jsenv/logger" "3.3.1"
+    "@jsenv/node-signals" "2.0.1"
+    "@jsenv/util" "3.5.2"
+    abort-controller "3.0.0"
+    kill-port "1.6.0"
+    node-fetch "2.6.0"
+
+"@jsenv/url-meta@5.2.2":
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@jsenv/url-meta/-/url-meta-5.2.2.tgz#a405649bad9a1b271af1c505accf464c5042e934"
+  integrity sha512-cXyGWf49KS+7c3T4ta/v6gqdQywDu5YsyVKkrY6C2KtTdkVBKNaYoSv+woVUks9RbFke4hq33UhD51xSI3aicg==
+
+"@jsenv/url-meta@5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@jsenv/url-meta/-/url-meta-5.2.3.tgz#fed4ef018445002d8bf147c0edc2a5d03de20288"
+  integrity sha512-OT+4G7zUHfrRPnWLyE8xtOZ4XxWfZcDJXohg4EgxO7B1qyp1eK+4aehF8WAdHkbe2U2zpzyzGDhD2V2ainZBRw==
+
+"@jsenv/util@3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@jsenv/util/-/util-3.5.2.tgz#a5586f67aece2dbe606608fae9238a60172e8341"
+  integrity sha512-S0uNwgv5Me1b+5O6LLd+ozD/FOhjQm+7mOmD9WrjfuMMOsKZwu7f+XeUWtk6/gldcGrBSAqOAOr+QmsFnP/u8w==
+  dependencies:
+    "@jsenv/cancellation" "1.4.1"
+    "@jsenv/node-signals" "2.0.1"
+    "@jsenv/url-meta" "5.2.2"
+
+"@jsenv/util@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@jsenv/util/-/util-3.6.0.tgz#7d0395e5d68bfbfea44e6d585431befbf73e78ec"
+  integrity sha512-HqWCkjM3PUIEw7p//UlWJmflEEwBbqi1fKnWgOuy/xEqYBsznyWjdjY5Kc0aNDnZDnsHVBeKBHiWx++x0u1fwg==
+  dependencies:
+    "@jsenv/cancellation" "1.4.1"
+    "@jsenv/node-signals" "2.0.1"
+    "@jsenv/url-meta" "5.2.3"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -2101,6 +2167,13 @@ abab@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.3.tgz#623e2075e02eb2d3f2475e49f99c91846467907a"
   integrity sha512-tsFzPpcttalNjFBCFMqsKYQcWxxen1pgJR56by//QwvJc4/OUS3kPOOttx2tSIfjsylB0pYu7f5D3K1RCxUnUg==
+
+abort-controller@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
+  integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
+  dependencies:
+    event-target-shim "^5.0.0"
 
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
@@ -4966,6 +5039,11 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+event-target-shim@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
+  integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
+
 eventemitter3@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.4.tgz#b5463ace635a083d018bdc7c917b4c5f10a85384"
@@ -5582,6 +5660,11 @@ get-stream@^4.0.0:
   integrity sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS/L66Kox+rJRNklLK7w==
   dependencies:
     pump "^3.0.0"
+
+get-them-args@^1.3.1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/get-them-args/-/get-them-args-1.3.2.tgz#74a20ba8a4abece5ae199ad03f2bcc68fdfc9ba5"
+  integrity sha1-dKILqKSr7OWuGZrQPyvMaP38m6U=
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -7346,6 +7429,14 @@ jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3, jsx-ast-utils@^2.4.1:
   dependencies:
     array-includes "^3.1.1"
     object.assign "^4.1.0"
+
+kill-port@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/kill-port/-/kill-port-1.6.0.tgz#70f7b91bf87158c44cf67e057a154ace488fc573"
+  integrity sha512-gwHRBZ3OLBcupsOJZlIt2Xvf6QqFH3lfdpGnmonXJnJrqq819UXtItGEU1rCMXHK6sXFlxdpkw8ka56rtWw/eQ==
+  dependencies:
+    get-them-args "^1.3.1"
+    shell-exec "^1.0.2"
 
 killable@^1.0.1:
   version "1.0.1"
@@ -11019,6 +11110,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+shell-exec@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/shell-exec/-/shell-exec-1.0.2.tgz#2e9361b0fde1d73f476c4b6671fa17785f696756"
+  integrity sha512-jyVd+kU2X+mWKMmGhx4fpWbPsjvD53k9ivqetutVW/BQ+WIZoDoP4d8vUMGezV6saZsiNoW2f9GIhg9Dondohg==
 
 shell-quote@1.7.2:
   version "1.7.2"

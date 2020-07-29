@@ -32,14 +32,8 @@ function ChoiceBoard() {
           <div className="col-12 my-auto">
             <div className="row text-center">
               <div className="col-lg-12 m-4">
-                <H3>
-                  {t('Which one would you like to choose?')}{' '}
-                  <TimerComponent timeout={15} />
-                </H3>
-                <div className="col-lg-12 m-4">
-                  <ProgressBar progress={20} />
-                  <ProgressBar progress={50} />
-                </div>
+                <H3>{t('Which one would you like to choose?')} </H3>
+                <TimerComponent timeout={15} />
               </div>
             </div>
             <div className="row text-center">
