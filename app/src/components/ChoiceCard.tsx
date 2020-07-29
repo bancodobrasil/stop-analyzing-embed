@@ -33,29 +33,29 @@ export type ChoiceCardProps = {
   ariaLabel?: string;
 };
 
-const CardWrapper = styled.div`
-    width: 100%;
-`;
+// const CardWrapper = styled.div`
+//     width: 100%;
+// `;
 
-const H2 = styled.h2`
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 2;
-    color: #59cd90;
-`;
+// const H2 = styled.h2`
+//     font-size: 1.5rem;
+//     font-weight: 700;
+//     line-height: 2;
+//     color: #59cd90;
+// `;
 
-const IMG = styled.img`
-  width: 100%;
-  height: 400px;
-`;
+// const IMG = styled.img`
+//   width: 100%;
+//   height: 400px;
+// `;
 
-const Para = styled.p`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
-    color: #59cd90;
-`;
+// const Para = styled.p`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 2rem;
+//     color: #59cd90;
+// `;
 
 function ChoiceCard({
   id,
@@ -67,23 +67,48 @@ function ChoiceCard({
   onClick,
   ariaLabel,
 }: ChoiceCardProps) {
-  let paragraphAndImage = (
+  let subParagraph = (
     <>
-        {imageURL && (
-            <IMG image={imageURL} role="img" aria-label={ariaLabel} />
-        )}
-        {paragraph && <Para className="card-text">{paragraph}</Para>}
+      {paragraph && (
+        <p className="inline-block font-semibold text-base mb-4 px-3 py-1">
+          {paragraph}
+        </p>
+      )}
+    </>
+  );
+
+  let image = (
+    <>
+      {imageURL && (
+        <img
+          className="w-full img-height"
+          style={{ height: '400px' }}
+          src={imageURL}
+        />
+      )}
     </>
   );
 
   if (elementsPlacement === 'pi') {
-    paragraphAndImage = (
-        <>
-            {paragraph && <Para className="card-text">{paragraph}</Para>}
-            {imageURL && (
-                <IMG image={imageURL} role="img" aria-label={ariaLabel} />
-            )}
-        </>
+    subParagraph = (
+      <>
+        {paragraph && (
+          <p className="inline-block font-semibold  text-base mb-4 px-3 py-1">
+            {paragraph}
+          </p>
+        )}
+      </>
+    );
+    image = (
+      <>
+        {imageURL && (
+          <img
+            className="w-full img-height"
+            style={{ height: '400px' }}
+            src={imageURL}
+          />
+        )}
+      </>
     );
   }
 
@@ -114,10 +139,18 @@ function ChoiceCard({
   };
 
   return (
-    <div role="region" className="card h-100" onClick={onCardClick}>
-      <CardWrapper>
-        {title && <H2>{title}</H2>}
-        {paragraphAndImage}
+    <div
+      role="region"
+      className="card h-100 border-0 bg-transparent"
+      onClick={onCardClick}
+    >
+      <div
+        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
+        style={{ borderRadius: '1rem' }}
+      >
+        {image}
+        {title && <div className="font-bold text-2xl py-2">{title}</div>}
+        {subParagraph}
         {buttonLabel && (
           <button
             type="button"
@@ -127,7 +160,7 @@ function ChoiceCard({
             {buttonLabel}
           </button>
         )}
-      </CardWrapper>
+      </div>
     </div>
   );
 }

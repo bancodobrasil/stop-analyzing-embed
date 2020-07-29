@@ -10,15 +10,14 @@ import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
 
 const H3 = styled.h3`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-weight: 700;
-    color: #2e2a27;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
 `;
 
 function ChoiceBoard() {
-
   const { t } = useTranslation();
 
   const commonOnClick = (e, card) => {
@@ -32,15 +31,9 @@ function ChoiceBoard() {
         <div className="row vh-100">
           <div className="col-12 my-auto">
             <div className="row text-center">
-              <div className="col-lg-12 mb-4">
-                <H3>
-                  {t('Which one would you like to choose?')}{' '}
-                  <TimerComponent timeout={15} />
-                </H3>
-                <div className="col-lg-12 mb-4">
-                  <ProgressBar progress={20} />
-                  <ProgressBar progress={50} />
-                </div>
+              <div className="col-lg-12 m-4">
+                <H3>{t('Which one would you like to choose?')} </H3>
+                <TimerComponent timeout={15} />
               </div>
             </div>
             <div className="row text-center">
