@@ -24,7 +24,11 @@ function ChoiceBoard() {
     'item2',
   ]);
 
+<<<<<<< HEAD
   const commonOnClick = (e, card) => {
+=======
+  const CommonOnClick = (e, card: never) => {
+>>>>>>> d69f9b2... feat: add env var to build script to be replace by bash in docker image build and start. refs #34 refs #37
     appendSelection(card);
   };
 
