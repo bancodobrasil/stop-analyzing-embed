@@ -2,12 +2,11 @@ import React, { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import image1 from './../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
-import image2 from './../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
-
-import useChoiceBoardModel from './useChoiceBoardModel';
+import image1 from '../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
+import image2 from '../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 import ChoiceCard from '../components/ChoiceCard';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
+import useChoiceBoardModel from './useChoiceBoardModel';
 
 const H3 = styled.h3`
   width: 100%;
@@ -21,7 +20,7 @@ function ChoiceBoard() {
   const { t } = useTranslation();
   const { selectedItems, appendSelection } = useChoiceBoardModel();
 
-  const commonOnClick = (e, card) => {
+  const commonOnClick = (_, card: never) => {
     appendSelection(card);
   };
 
