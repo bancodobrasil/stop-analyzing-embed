@@ -41,14 +41,9 @@ function ChoiceBoard() {
                   id="card1"
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
-<<<<<<< HEAD
                   imageURL={image1}
                   onClick={commonOnClick}
                   ariaLabel="light pink rose"
-=======
-                  imageURL="https://images.unsplash.com/photo-1565995240383-ed5204015aee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
-                  onClick={CommonOnClick}
->>>>>>> 138726974848381cdc261e99b012e5e6f8fa3488
                 />
               </div>
               <div className="col-lg-6 mb-4">
@@ -56,14 +51,9 @@ function ChoiceBoard() {
                   id="card2"
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
-<<<<<<< HEAD
                   imageURL={image2}
                   onClick={commonOnClick}
                   ariaLabel="pink rose in full bloom"
-=======
-                  imageURL="https://picsum.photos/seed/x2/200/300"
-                  onClick={CommonOnClick}
->>>>>>> 138726974848381cdc261e99b012e5e6f8fa3488
                 />
               </div>
             </div>
