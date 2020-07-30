@@ -19,16 +19,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-<<<<<<< HEAD
     "build:css": "tailwindcss build src/styles/tailwind.css -o src/styles/main.css",
     "dev:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "start": "npm run dev:css && react-scripts start",
     "build": "NODE_ENV=production npm run build:css && react-scripts build",
-=======
     "dev": "REACT_APP_BACKEND_URL=http://localhost:8008 yarn start",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
->>>>>>> 044a8f6... fix: fixing some typescript function type params. refs #34 refs #37
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color",
