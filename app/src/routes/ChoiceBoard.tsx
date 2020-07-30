@@ -1,16 +1,13 @@
 import React, { Suspense } from 'react';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import image1 from './../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from './../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 
+import useChoiceBoardModel from './useChoiceBoardModel';
 import ChoiceCard from '../components/ChoiceCard';
-import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
-import useChoiceBoardModel from '../components/ChoiceBoard/useChoiceBoardModel';
-import { type } from 'os';
 
 const H3 = styled.h3`
   width: 100%;
