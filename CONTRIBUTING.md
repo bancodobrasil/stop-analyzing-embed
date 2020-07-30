@@ -55,10 +55,10 @@ If you are working on the master in your forked repo:
 $ git checkout master
 ```
 
-- Rebase the **original repo master** into you forked repo **master** to update it:
+- Merge the **original repo master** into you forked repo **master** to update it:
 
 ```bash
-$ git rebase upstream/master
+$ git merge upstream/master
 ```
 
 If you are working on a branch in your forked repo:
@@ -69,10 +69,10 @@ If you are working on a branch in your forked repo:
 $ git checkout <branch_name> # for example: git checkout issue-9
 ```
 
-- Rebase the **original repo master** into you forked repo **branch** to update it:
+- Merge the **original repo master** into you forked repo **branch** to update it:
 
 ```bash
-$ git rebase upstream/master
+$ git merge upstream/master
 ```
 
 ## GitHub Actions
