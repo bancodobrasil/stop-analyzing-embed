@@ -7,9 +7,9 @@ export default () => {
   // Initial choices
   const initialOptions = [];
   // useEffect(async () => {
-  //  const response = await fetch(process.REACT_APP_BACKEND_URL);
+  //  const response = await fetch(process.env.REACT_APP_BACKEND_URL);
   //  initialOptions = [response.body.choices[0], response.body.choices[1]];
-  //})
+  // })
 
   // All choices
   const [allOptions, setAllOptions] = useState(initialOptions);
@@ -24,11 +24,11 @@ export default () => {
     // This function will not only append the current choice to the list of choices,
     // but also return the two new choices
     // const response = await fetch('http://localhost:8008/items', {method: 'post', body: {selection}});
-    // 
+    //
     // setProgress(response.body.completeness);
     // setAllOptions([response.body.choices[0], response.body.choices[1]]);
     // return [response.body.choices[0], response.body.choices[1]];
-    // 
+    //
     //
   };
 
