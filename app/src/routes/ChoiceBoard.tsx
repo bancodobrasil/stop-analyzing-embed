@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
@@ -8,6 +9,8 @@ import image2 from './../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jp
 import ChoiceCard from '../components/ChoiceCard';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import TimerComponent from '../components/TimerComponent/TimerComponent';
+import useChoiceBoardModel from '../components/ChoiceBoard/useChoiceBoardModel';
+import { type } from 'os';
 
 const H3 = styled.h3`
   width: 100%;
@@ -19,10 +22,13 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
+  const { selectedItems, appendSelection } = useChoiceBoardModel([
+    'item1',
+    'item2',
+  ]);
 
   const commonOnClick = (e, card) => {
-    console.log('Card clicked!!');
-    console.log(card);
+    appendSelection(card);
   };
 
   return (
