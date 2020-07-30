@@ -1,5 +1,4 @@
 import React, { MouseEvent } from 'react';
-import styled from 'styled-components';
 
 export type ChoiceCardProps = {
   /** card identifier */
