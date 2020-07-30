@@ -19,16 +19,9 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
-  const { selectedItems, appendSelection } = useChoiceBoardModel([
-    'item1',
-    'item2',
-  ]);
+  const { selectedItems, appendSelection } = useChoiceBoardModel();
 
-<<<<<<< HEAD
   const commonOnClick = (e, card) => {
-=======
-  const CommonOnClick = (e, card: never) => {
->>>>>>> d69f9b2... feat: add env var to build script to be replace by bash in docker image build and start. refs #34 refs #37
     appendSelection(card);
   };
 
