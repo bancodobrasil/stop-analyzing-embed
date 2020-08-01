@@ -29,7 +29,7 @@ function ChoiceBoard() {
       <section className="container">
         <div className="grid h-screen">
           <div className="my-auto">
-            <div className="grid text-center">
+            <div className="text-center">
               <div className="mb-10">
                 <H3>{t('Which one would you like to choose?')} </H3>
               </div>
