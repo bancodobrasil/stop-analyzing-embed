@@ -27,16 +27,15 @@ function ChoiceBoard() {
   return (
     <Suspense fallback="loading">
       <section className="container">
-        <div className="row vh-100">
-          <div className="col-12 my-auto">
-            <div className="row text-center">
-              <div className="col-lg-12 m-4">
+        <div className="grid h-screen">
+          <div className="my-auto">
+            <div className="text-center">
+              <div className="mb-10">
                 <H3>{t('Which one would you like to choose?')} </H3>
-    
               </div>
             </div>
-            <div className="row text-center">
-              <div className="col-lg-6 mb-4">
+            <div className="grid grid-cols-2 text-center">
+              <div className="mb-4">
                 <ChoiceCard
                   id="card1"
                   title={t('Choice 1')}
@@ -46,7 +45,7 @@ function ChoiceBoard() {
                   ariaLabel="light pink rose"
                 />
               </div>
-              <div className="col-lg-6 mb-4">
+              <div className="mb-4">
                 <ChoiceCard
                   id="card2"
                   title={t('Choice 2')}
