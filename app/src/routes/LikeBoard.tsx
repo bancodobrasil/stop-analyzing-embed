@@ -15,7 +15,7 @@ function LikeBoard() {
   };
 
   return (
-    <div className="row text-center">
+    <div className="grid grid-row-1 text-center">
       <DropCardArea onDrop={dislikeClick} className="dropDislikeArea" />
       <div className="board">
         <LikeCard
