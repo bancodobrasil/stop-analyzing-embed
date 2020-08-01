@@ -79,11 +79,7 @@ function ChoiceCard({
   let image = (
     <>
       {imageURL && (
-        <img
-          className="w-full img-height"
-          style={{ height: '400px' }}
-          src={imageURL}
-        />
+        <img className="w-full" style={{ height: '400px' }} src={imageURL} />
       )}
     </>
   );
@@ -140,7 +136,7 @@ function ChoiceCard({
   return (
     <div
       role="region"
-      className="card h-100 border-0 bg-transparent"
+      className="h-100 border-0 bg-transparent"
       onClick={onCardClick}
     >
       <div
@@ -153,7 +149,7 @@ function ChoiceCard({
         {buttonLabel && (
           <button
             type="button"
-            className="btn btn-primary mt-auto"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={onButtonClick}
           >
             {buttonLabel}
