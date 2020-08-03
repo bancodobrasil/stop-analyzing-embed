@@ -18,6 +18,7 @@ const H3 = styled.h3`
 
 function ChoiceBoard() {
   const { t } = useTranslation();
+  // eslint-disable-next-line
   const { selectedItems, appendSelection } = useChoiceBoardModel();
 
   const commonOnClick = (_, card: never) => {
@@ -41,6 +42,7 @@ function ChoiceBoard() {
                   title={t('Choice 1')}
                   paragraph={t("That's a good choice!")}
                   imageURL={image1}
+                  imageALT="Light Pink Rose"
                   onClick={commonOnClick}
                   ariaLabel="light pink rose"
                 />
@@ -51,6 +53,7 @@ function ChoiceBoard() {
                   title={t('Choice 2')}
                   paragraph={t("Nope, that's a good choice!")}
                   imageURL={image2}
+                  imageALT="Pink Rose in Full Bloom"
                   onClick={commonOnClick}
                   ariaLabel="pink rose in full bloom"
                 />
