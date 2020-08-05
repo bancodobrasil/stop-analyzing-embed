@@ -1,0 +1,29 @@
+{
+    "completeness": "0.3",
+    "choices": [
+        {
+            "id": "1",
+            "title": "Shirt",
+            "subtitle": "Wedding Shirt",
+            "contentURL": "contentURL",
+            "attributes": [
+                {
+                    "attr_name_1": "req.body.attr_name_1",
+                    "attr_name_2": "req.body.attr_name_2"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Trousers",
+            "subtitle": "Wedding Trousers",
+            "contentURL": "contentURL",
+            "attributes": [
+                {
+                    "attr_name_1": "req.body.attr_name_1",
+                    "attr_name_2": "req.body.attr_name_2"
+                }
+            ]
+        }
+    ]
+}
