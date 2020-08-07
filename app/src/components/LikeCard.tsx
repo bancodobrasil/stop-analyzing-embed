@@ -56,33 +56,34 @@ function LikeCard({
     e.stopPropagation();
   };
 
-  let paragraphAndImage = (
-    <>
-      {imageURL && <img alt={imageURL} src={imageURL} />}
-      {paragraph && <p className="card-text">{paragraph}</p>}
-    </>
+  let image = (
+    <>{imageURL && <img alt={imageURL} className="w-full" src={imageURL} />}</>
+  );
+  let subParagraph = (
+    <>{paragraph && <p className="text-gray">{paragraph}</p>}</>
   );
 
   if (elementsPlacement === 'pi') {
-    paragraphAndImage = (
+    image = (
       <>
-        {paragraph && <p className="card-text">{paragraph}</p>}
-        {imageURL && <img alt={imageURL} src={imageURL} />}
+        {imageURL && <img alt={imageURL} className="w-full" src={imageURL} />}
       </>
     );
+    subParagraph = <>{paragraph && <p className="text-gray">{paragraph}</p>}</>;
   }
 
   return (
     <div
       id={id}
-      className="card h-100"
+      className="max-w-sm rounded overflow-hidden shadow-lg h-100"
       draggable={draggable}
       {...(draggable ? { onDragStart: dragStart } : {})}
       {...(draggable ? { onDragOver: dragOver } : {})}
     >
-      <div className="card-body d-flex flex-column justify-content-center align-items-center">
-        {title && <h2 className="card-title text-primary">{title}</h2>}
-        {paragraphAndImage}
+      <div className="flex flex-col justify-center items-center">
+        {image}
+        {title && <h2 className="font-bold">{title}</h2>}
+        {subParagraph}
         <div>
           {onLikeClick && (
             <CardButton

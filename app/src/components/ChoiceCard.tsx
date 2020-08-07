@@ -13,6 +13,9 @@ export type ChoiceCardProps = {
   /** image placed on the middle or bottom of the card, dependending o the `elementsPlacement` attribute. Default: placed bellow the title (if present)  */
   imageURL?: string;
 
+  /** alt text for image */
+  imageALT?: string;
+
   /** how the elements are positioned on the card. Possible options:
    * - pi
    * - ip
@@ -61,6 +64,7 @@ function ChoiceCard({
   title,
   paragraph,
   imageURL,
+  imageALT,
   elementsPlacement,
   buttonLabel,
   onClick,
@@ -78,12 +82,8 @@ function ChoiceCard({
 
   let image = (
     <>
-      {imageURL && (
-        <img
-          className="w-full img-height"
-          style={{ height: '400px' }}
-          src={imageURL}
-        />
+      {imageURL && imageALT && (
+        <img className="w-full" style={{ height: '400px' }} src={imageURL} alt={imageALT} />
       )}
     </>
   );
@@ -100,11 +100,12 @@ function ChoiceCard({
     );
     image = (
       <>
-        {imageURL && (
+        {imageURL && imageALT && (
           <img
             className="w-full img-height"
             style={{ height: '400px' }}
             src={imageURL}
+            alt={imageALT}
           />
         )}
       </>
@@ -118,6 +119,7 @@ function ChoiceCard({
         title,
         paragraph,
         imageURL,
+        imageALT,
         elementsPlacement,
         buttonLabel,
       });
@@ -131,6 +133,7 @@ function ChoiceCard({
         title,
         paragraph,
         imageURL,
+        imageALT,
         elementsPlacement,
         buttonLabel,
       });
@@ -140,7 +143,7 @@ function ChoiceCard({
   return (
     <div
       role="region"
-      className="card h-100 border-0 bg-transparent"
+      className="h-100 border-0 bg-transparent"
       onClick={onCardClick}
     >
       <div
@@ -153,7 +156,7 @@ function ChoiceCard({
         {buttonLabel && (
           <button
             type="button"
-            className="btn btn-primary mt-auto"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={onButtonClick}
           >
             {buttonLabel}

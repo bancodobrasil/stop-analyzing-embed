@@ -12,6 +12,7 @@ export default () => {
   // })
 
   // All choices
+  // eslint-disable-next-line
   const [allOptions, setAllOptions] = useState(initialOptions);
 
   // Progress
