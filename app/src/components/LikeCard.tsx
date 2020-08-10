@@ -57,7 +57,7 @@ function LikeCard({
   };
 
   let image = (
-    <>{imageURL && <img alt={imageURL} className="w-full" src={imageURL} />}</>
+    <>{imageURL && <img alt={imageURL} className="w-full object-fit" src={imageURL} />}</>
   );
   let subParagraph = (
     <>{paragraph && <p className="text-gray">{paragraph}</p>}</>
@@ -66,7 +66,7 @@ function LikeCard({
   if (elementsPlacement === 'pi') {
     image = (
       <>
-        {imageURL && <img alt={imageURL} className="w-full" src={imageURL} />}
+        {imageURL && <img alt={imageURL} className="w-full object-fit" src={imageURL} />}
       </>
     );
     subParagraph = <>{paragraph && <p className="text-gray">{paragraph}</p>}</>;
