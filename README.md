@@ -3,7 +3,7 @@
 [![This is a Poppins project](https://raw.githubusercontent.com/bancodobrasil/poppins/master/badge-poppins.svg)](https://github.com/bancodobrasil/poppins)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
-Stop Analyzing is a tool that uses Tinder like interaction to help your customers make up their mind when choosing something that has lot of options, like a product of an e-commerce. [Check this repo for more details](https://github.com/bancodobrasil/stop-analyzing) and [this issue explains how this idea was born](https://github.com/bancodobrasil/stop-analyzing/issues/2). **Stop Analyzing Embed** is a web component to be embedded on client websites.
+Stop Analyzing is a tool that uses Tinder-like user interaction to help customers make up their mind when choosing something that has lot of options, such as e-commerce products. [Check this repo for more details](https://github.com/bancodobrasil/stop-analyzing) and [this issue explains how this idea was born](https://github.com/bancodobrasil/stop-analyzing/issues/2). **Stop Analyzing Embed** is a web component designed to be embedded on client websites so that they can quickly & easily implement the features of the Stop Analyzing tool.
 
 ## This project was made for first-time contributors and open source beginners
 
@@ -11,37 +11,50 @@ This project follows the [Poppins manifesto guidelines](https://github.com/banco
 
 ## Contribute now!
 
-So, let's start contributing! **Open an issue asking for a task to be done by you**. A mentor/maintainer will come and provide a technical overview of the project and what are the possibles ways of contributing to the project. You will discuss the options and a suitable issue will be assigned or created to you.
+So, let's start contributing! **First, go to the 'Issues' tab and open a new issue, titled something like: "I want to contribute." Then, in the first comment, introduce yourself and ask for a task to be assigned to you**. If you already have an issue in mind, feel free to describe it in that same comment. A mentor/maintainer will respond with a technical overview of the project and some possible ways of contributing. You will discuss the options, and when a suitable issue is agreed upon, the mentor will create a new issue and assign it to you. 
 
-That's it. Just make yourself at home and good luck!
+That's it! Just make yourself at home, and good luck!
 
 ## Getting Started
 
-To build and run stop-analyzing-embed locally, just follow the instructions bellow. You can either using docker or run it directly using NPM run commands. On both ways, web server will show the hostname on the console, something like this:
+### Clone the Repo 
+
+Before you start working on an issue, first you need to **fork** and **clone** the repo. There are some great instructions on how to do so [here](https://gist.github.com/Chaser324/ce0505fbed06b947d962). 
+
+### Configure the Project on Your Local Machine
+
+Once you've forked and cloned the repo, it's time to run the app locally. 
+
+There are two options to build and run **stop-analyzing-embed** locally on your machine: using docker, or running it directly with NPM commands. Just follow the instructions below based on your preference. Regardless of which way you choose, the web server will show the hostname on the console, something like this:
+
 ```
 stop-analyzing-embed | Listening on http://738e062f602e:8000, http://127.0.0.1:8000, http://192.168.124.2:8000
 ```
 
-### Using Docker
-To run with docker-compose:
+In the example above, you would navigate to `localhost:8000` to view the app. 
+
+#### Using Docker
+To run with docker-compose, open your cloned project and navigate into the root directory (the same directory where the `Dockerfile` is located). Then, open a terminal session and enter the following:
 ```
-docker-compose up
+$ docker-compose up
 ```
-If you prefer work on Dockerfile directly:
+The above command will spin up the development server right away, but it may take a couple of minutes to build. So, just be patient.
+
+If you prefer to work on the Dockerfile directly:
 ```
-docker build . --tag stop-analyzing-embed:latest
+$ docker build . --tag stop-analyzing-embed:latest
 ```
 
-### Using a Development Environment
+#### Using a Development Environment
 
-Make sure to install all the dependencies:
+To run with NPM, first change your terminal session in the `app` directory. Then, make sure to install all the dependencies:
 ```
 $ cd app
 $ npm install
 ```
-Run de application:
+When the dependencies have all been installed, you're ready to run the application:
 ```
-npm run start
+$ npm run start
 ```
 *Important: make sure you have [NPM](https://www.npmjs.com/get-npm) installed in your machine.*
 

@@ -27,7 +27,7 @@ To contribute to this project you must fork this projetct, get an issue and make
 
 1. When opening a PR, if its an UI issue that you are working on and hence needs to be evaluated visually, its a good practive to provide some prints or gifs of the result. It helps the PR reviewer to give you a faster feedback.
 
-1. To update your fork with the project master, [follow those instructions](https://gist.github.com/Chaser324/ce0505fbed06b947d962):
+1. To update your fork with the project master, [follow these instructions](https://gist.github.com/Chaser324/ce0505fbed06b947d962):
 
 - Add the master of the original project naming it `upstream`:
 
