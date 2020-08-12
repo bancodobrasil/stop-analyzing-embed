@@ -19,11 +19,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "build:css": "tailwindcss build src/styles/tailwind.css -o src/styles/main.css",
-    "dev:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
-    "start": "npm run dev:css && react-scripts start",
     "build": "NODE_ENV=production REACT_APP_BACKEND_URL=BUILD_APP_BACKEND_URL  npm run build:css && react-scripts build",
+    "build:css": "tailwindcss build src/styles/tailwind.css -o src/styles/main.css",
     "dev": "REACT_APP_BACKEND_URL=http://localhost:8008 yarn start",
+    "start": "npm run dev:css && react-scripts start",
+    "dev:css": "postcss src/styles/tailwind.css -o src/styles/main.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color",
