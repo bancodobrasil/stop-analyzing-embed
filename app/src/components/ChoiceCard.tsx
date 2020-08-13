@@ -83,7 +83,12 @@ function ChoiceCard({
   let image = (
     <>
       {imageURL && imageALT && (
-        <img className="w-full object-cover" style={{ maxHeight: '400px' }} src={imageURL} alt={imageALT} />
+        <img
+          className="w-full object-cover"
+          style={{ maxHeight: '400px' }}
+          src={imageURL}
+          alt={imageALT}
+        />
       )}
     </>
   );
