@@ -1,6 +1,7 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, MouseEvent, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import anime from "animejs/lib/anime.es.js";
 
 import image1 from '../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from '../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
@@ -20,8 +21,48 @@ function ChoiceBoard() {
   // eslint-disable-next-line
   const { selectedItems, appendSelection } = useChoiceBoardModel();
 
+  const [dismissed, setDismissed] = useState(false);
+  const animationDuration = 750;
+
+  useEffect(() => {
+    console.log(Date.now());
+    console.log(dismissed);
+
+    const refreshCards = () => {
+      setDismissed(false);
+      // re-render the cards here.
+    };
+    const timer = setTimeout(() => refreshCards(), animationDuration);
+    const cleanup = () => clearTimeout(timer);
+    return cleanup();
+  }, [dismissed]);
+
   const commonOnClick = (_, card: never) => {
     appendSelection(card);
+  };
+
+  const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+
+    const card1 = document.getElementById("card1");
+    const card2 = document.getElementById("card2");
+
+    anime({
+      targets: card1,
+      translateX: -1500,
+      duration: animationDuration,
+      rotate: "180deg",
+      easing: "easeInElastic(1, 1)"
+    });
+    anime({
+      targets: card2,
+      translateX: +1500,
+      duration: animationDuration,
+      rotate: "180deg",
+      easing: "easeInElastic(1, 1)"
+    });
+
+    setDismissed(true);
   };
 
   return (
@@ -60,6 +101,7 @@ function ChoiceBoard() {
             </div>
           </div>
         </div>
+        <button onClick={handleDismiss}>DISMISS</button>
       </section>
     </Suspense>
   );
