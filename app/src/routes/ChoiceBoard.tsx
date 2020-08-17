@@ -42,7 +42,7 @@ function ChoiceBoard() {
     appendSelection(card);
   };
 
-  const dismissButtonLabel = 'I don\'t like either 🤔. Next, please!';
+  const dismissButtonLabel = "I don't like either 🤔. Next, please!";
 
   const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
