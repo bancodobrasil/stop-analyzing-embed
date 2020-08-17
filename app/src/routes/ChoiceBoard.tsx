@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import image1 from '../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from '../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 import ChoiceCard from '../components/ChoiceCard';
-import useChoiceBoardModel from './useChoiceBoardModel';
 import DismissButton from '../components/DismissButton';
+import useChoiceBoardModel from './useChoiceBoardModel';
 
 const H3 = styled.h3`
   width: 100%;
@@ -42,7 +42,7 @@ function ChoiceBoard() {
     appendSelection(card);
   };
 
-  const dismissButtonLabel = `I don't like either 🤔. Next, please!`;
+  const dismissButtonLabel = 'I don\'t like either 🤔. Next, please!';
 
   const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
@@ -104,7 +104,7 @@ function ChoiceBoard() {
             </div>
           </div>
           <div className="h-10 grid-cols-1 text-center">
-            <DismissButton 
+            <DismissButton
               buttonLabel={dismissButtonLabel}
               onClick={handleDismiss}
             />

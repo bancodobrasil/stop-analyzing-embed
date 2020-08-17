@@ -5,7 +5,7 @@ import React from 'react';
 
 import DismissButton from './DismissButton';
 
-test('should render: Button Label with onClick event.', () => {
+test('should render: Button Label with onClick event and TailwindCSS classes.', () => {
   const fn = jest.fn();
   const { queryByText } = render(
     <DismissButton buttonLabel="Button Label" onClick={fn} />
@@ -15,5 +15,6 @@ test('should render: Button Label with onClick event.', () => {
   expect(fn).toBeCalledTimes(1);
 
   expect(queryByText('Button Label')).toBeInTheDocument();
+  expect(queryByText('Button Label')).toHaveClass('bg-red-700');
+  expect(queryByText('Button Label')).toHaveClass('border-2');
 });
-
