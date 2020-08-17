@@ -42,6 +42,8 @@ function ChoiceBoard() {
     appendSelection(card);
   };
 
+  const dismissButtonLabel = `I don't like either 🤔. Next, please!`;
+
   const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
 
@@ -102,11 +104,9 @@ function ChoiceBoard() {
             </div>
           </div>
           <div className="h-10 grid-cols-1 text-center">
-            {/* <button 
-              onClick={handleDismiss}
-            >I don't like either <span role="img" aria-label="thinking-face">🤔</span>. Next, please!</button> */}
             <DismissButton 
-              handleDismiss={handleDismiss}
+              buttonLabel={dismissButtonLabel}
+              onClick={handleDismiss}
             />
           </div>
         </div>
