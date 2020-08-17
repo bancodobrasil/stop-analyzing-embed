@@ -1,12 +1,13 @@
-import React, { Suspense, MouseEvent, useState, useEffect } from 'react';
+import anime from 'animejs/lib/anime.es.js';
+import React, { MouseEvent, Suspense, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import anime from "animejs/lib/anime.es.js";
 
 import image1 from '../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from '../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 import ChoiceCard from '../components/ChoiceCard';
 import useChoiceBoardModel from './useChoiceBoardModel';
+import DismissButton from '../components/DismissButton';
 
 const H3 = styled.h3`
   width: 100%;
@@ -44,22 +45,22 @@ function ChoiceBoard() {
   const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
 
-    const card1 = document.getElementById("card1");
-    const card2 = document.getElementById("card2");
+    const card1 = document.getElementById('card1');
+    const card2 = document.getElementById('card2');
 
     anime({
       targets: card1,
       translateX: -1500,
       duration: animationDuration,
-      rotate: "180deg",
-      easing: "easeInElastic(1, 1)"
+      rotate: '180deg',
+      easing: 'easeInElastic(1, 1)',
     });
     anime({
       targets: card2,
       translateX: +1500,
       duration: animationDuration,
-      rotate: "180deg",
-      easing: "easeInElastic(1, 1)"
+      rotate: '180deg',
+      easing: 'easeInElastic(1, 1)',
     });
 
     setDismissed(true);
@@ -100,8 +101,15 @@ function ChoiceBoard() {
               </div>
             </div>
           </div>
+          <div className="h-10 grid-cols-1 text-center">
+            {/* <button 
+              onClick={handleDismiss}
+            >I don't like either <span role="img" aria-label="thinking-face">🤔</span>. Next, please!</button> */}
+            <DismissButton 
+              handleDismiss={handleDismiss}
+            />
+          </div>
         </div>
-        <button onClick={handleDismiss}>DISMISS</button>
       </section>
     </Suspense>
   );
