@@ -25,17 +25,24 @@ function ChoiceBoard() {
   const [dismissed, setDismissed] = useState(false);
   const animationDuration = 750;
 
+  // key variables for refreshing cards
+  const [key1, setKey1] = useState('' + (new Date().getTime()) + 1);
+  const [key2, setKey2] = useState('' + (new Date().getTime()) + 2);
+  
   useEffect(() => {
-    console.log(Date.now());
-    console.log(dismissed);
-
     const refreshCards = () => {
       setDismissed(false);
-      // re-render the cards here.
+
+      // After dismissing, get new data and re-render the cards here:
+      setKey1('' + (new Date().getTime()) + 1);
+      setKey2('' + (new Date().getTime()) + 2);
     };
-    const timer = setTimeout(() => refreshCards(), animationDuration);
+    
+    const timer = setTimeout(() => {
+      if (dismissed) refreshCards();
+    }, animationDuration * 2);
     const cleanup = () => clearTimeout(timer);
-    return cleanup();
+    return cleanup;
   }, [dismissed]);
 
   const commonOnClick = (_, card: never) => {
@@ -88,6 +95,7 @@ function ChoiceBoard() {
                   imageALT="Light Pink Rose"
                   onClick={commonOnClick}
                   ariaLabel="light pink rose"
+                  key={key1}
                 />
               </div>
               <div className="mb-4">
@@ -99,6 +107,7 @@ function ChoiceBoard() {
                   imageALT="Pink Rose in Full Bloom"
                   onClick={commonOnClick}
                   ariaLabel="pink rose in full bloom"
+                  key={key2}
                 />
               </div>
             </div>
