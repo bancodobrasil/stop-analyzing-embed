@@ -26,16 +26,16 @@ function ChoiceBoard() {
   const animationDuration = 750;
 
   // key variables for refreshing cards
-  const [key1, setKey1] = useState(`${  new Date().getTime()  }${1}`);
-  const [key2, setKey2] = useState(`${  new Date().getTime()  }${2}`);
+  const [key1, setKey1] = useState(`${new Date().getTime()}${1}`);
+  const [key2, setKey2] = useState(`${new Date().getTime()}${2}`);
 
   useEffect(() => {
     const refreshCards = () => {
       setDismissed(false);
 
       // After dismissing, get new data and re-render the cards here:
-      setKey1(`${  new Date().getTime()  }${1}`);
-      setKey2(`${  new Date().getTime()  }${2}`);
+      setKey1(`${new Date().getTime()}${1}`);
+      setKey2(`${new Date().getTime()}${2}`);
     };
 
     const timer = setTimeout(() => {
