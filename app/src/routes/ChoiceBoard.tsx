@@ -15,6 +15,7 @@ const H3 = styled.h3`
   justify-content: center;
   font-weight: 700;
   color: #fff;
+  font-size: 2rem;
 `;
 
 function ChoiceBoard() {

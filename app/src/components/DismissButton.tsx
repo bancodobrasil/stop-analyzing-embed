@@ -9,7 +9,7 @@ function DismissButton({ buttonLabel, onClick }: DismissButtonProps) {
   return (
     <span>
       <button
-        className="text-orange-200 rounded-lg border-2 border-red-700 p-2 border-opacity-50 bg-red-700 bg-opacity-25 shadow"
+        className="rounded-full py-2 px-4 bg-white shadow"
         onClick={onClick}
         type="button"
       >
