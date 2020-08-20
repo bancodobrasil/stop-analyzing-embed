@@ -78,49 +78,51 @@ function ChoiceBoard() {
 
   return (
     <Suspense fallback="loading">
-      <section className="container">
-        <div className="grid h-screen">
-          <div className="my-auto">
-            <div className="text-center">
-              <div className="mb-10">
-                <H3>{t('Which one would you like to choose?')} </H3>
+      <div style={{overflow: 'hidden'}}>
+        <section className="container">
+          <div className="grid h-screen">
+            <div className="my-auto">
+              <div className="text-center">
+                <div className="mb-10">
+                  <H3>{t('Which one would you like to choose?')} </H3>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 text-center">
+                <div className="mb-4">
+                  <ChoiceCard
+                    id="card1"
+                    title={t('Choice 1')}
+                    paragraph={t("That's a good choice!")}
+                    imageURL={image1}
+                    imageALT="Light Pink Rose"
+                    onClick={commonOnClick}
+                    ariaLabel="light pink rose"
+                    key={key1}
+                  />
+                </div>
+                <div className="mb-4">
+                  <ChoiceCard
+                    id="card2"
+                    title={t('Choice 2')}
+                    paragraph={t("Nope, that's a good choice!")}
+                    imageURL={image2}
+                    imageALT="Pink Rose in Full Bloom"
+                    onClick={commonOnClick}
+                    ariaLabel="pink rose in full bloom"
+                    key={key2}
+                  />
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 text-center">
-              <div className="mb-4">
-                <ChoiceCard
-                  id="card1"
-                  title={t('Choice 1')}
-                  paragraph={t("That's a good choice!")}
-                  imageURL={image1}
-                  imageALT="Light Pink Rose"
-                  onClick={commonOnClick}
-                  ariaLabel="light pink rose"
-                  key={key1}
-                />
-              </div>
-              <div className="mb-4">
-                <ChoiceCard
-                  id="card2"
-                  title={t('Choice 2')}
-                  paragraph={t("Nope, that's a good choice!")}
-                  imageURL={image2}
-                  imageALT="Pink Rose in Full Bloom"
-                  onClick={commonOnClick}
-                  ariaLabel="pink rose in full bloom"
-                  key={key2}
-                />
-              </div>
+            <div className="h-10 grid-cols-1 text-center">
+              <DismissButton
+                buttonLabel={dismissButtonLabel}
+                onClick={handleDismiss}
+              />
             </div>
           </div>
-          <div className="h-10 grid-cols-1 text-center">
-            <DismissButton
-              buttonLabel={dismissButtonLabel}
-              onClick={handleDismiss}
-            />
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Suspense>
   );
 }
