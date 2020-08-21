@@ -11,10 +11,7 @@ function DismissButton({ buttonLabel, onClick }: DismissButtonProps) {
       <button
         className="rounded-full py-2 px-4 bg-white shadow"
         onClick={onClick}
-        style={{
-          backfaceVisibility: 'hidden',
-          outline: 'none',
-        }}
+        style={{ outline: 'none' }}
         type="button"
       >
         {buttonLabel}

@@ -151,6 +151,7 @@ function ChoiceCard({
       className="h-100 border-0 bg-transparent"
       onClick={onCardClick}
       id={id}
+      style={{ backfaceVisibility: 'hidden' }}
     >
       <div
         className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
