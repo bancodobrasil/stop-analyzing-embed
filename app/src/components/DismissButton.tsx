@@ -13,7 +13,7 @@ function DismissButton({ buttonLabel, onClick }: DismissButtonProps) {
         onClick={onClick}
         style={{
           backfaceVisibility: 'hidden',
-          outline: 'none'
+          outline: 'none',
         }}
         type="button"
       >

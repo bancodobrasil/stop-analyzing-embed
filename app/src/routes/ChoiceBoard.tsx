@@ -78,7 +78,7 @@ function ChoiceBoard() {
 
   return (
     <Suspense fallback="loading">
-      <div style={{overflow: 'hidden'}}>
+      <div style={{ overflow: 'hidden' }}>
         <section className="container">
           <div className="grid h-screen">
             <div className="my-auto">
