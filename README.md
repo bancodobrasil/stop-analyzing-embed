@@ -51,6 +51,12 @@ To run with NPM, first change your terminal session in the `app` directory. Then
 ```
 $ cd app
 $ npm install
+
+```
+To get the latest version of typescript
+```
+$ npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
 ```
 When the dependencies have all been installed, you're ready to run the application:
 ```
