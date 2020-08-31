@@ -51,6 +51,7 @@ To run with NPM, first change your terminal session in the `app` directory. Then
 ```
 $ cd app
 $ npm install
+
 ```
 When the dependencies have all been installed, you're ready to run the application:
 ```
