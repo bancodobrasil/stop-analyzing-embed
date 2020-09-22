@@ -30,8 +30,8 @@ function CardButton({
   };
 
   const btnClassName = isPrimary
-    ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-    : 'bg-accent-500 hover:bg-accent-700 text-white font-bold py-2 px-4 rounded';
+    ? 'btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+    : 'btn-default bg-accent-500 hover:bg-accent-700 text-white font-bold py-2 px-4 rounded';
 
   return (
     <span style={{ padding: '5px' }}>
