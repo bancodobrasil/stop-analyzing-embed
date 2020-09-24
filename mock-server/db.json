@@ -1,29 +1,29 @@
 {
-    "completeness": "0.3",
-    "choices": [
+  "completeness": "0.3",
+  "choices": [
+    {
+      "id": "5f355a24ccb4180025ee98ab",
+      "title": "Fashion Shirt",
+      "subtitle": "Colored nice Shirt",
+      "contentURL": "https://lorempixel.com/640/480/",
+      "attributes": [
         {
-            "id": "1",
-            "title": "Shirt",
-            "subtitle": "Wedding Shirt",
-            "contentURL": "contentURL",
-            "attributes": [
-                {
-                    "attr_name_1": "req.body.attr_name_1",
-                    "attr_name_2": "req.body.attr_name_2"
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "title": "Trousers",
-            "subtitle": "Wedding Trousers",
-            "contentURL": "contentURL",
-            "attributes": [
-                {
-                    "attr_name_1": "req.body.attr_name_1",
-                    "attr_name_2": "req.body.attr_name_2"
-                }
-            ]
+          "size": "S",
+          "color": "multiple"
         }
-    ]
+      ]
+    },
+    {
+      "id": "5f358359ccb4180025ee98ad",
+      "title": "Corporate Shirt",
+      "subtitle": "Corporate long sleeve Shirt",
+      "contentURL": "https://lorempixel.com/640/480/",
+      "attributes": [
+        {
+          "size": "S",
+          "color": "black"
+        }
+      ]
+    }
+  ]
 }
