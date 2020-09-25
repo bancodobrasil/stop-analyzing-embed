@@ -84,7 +84,7 @@ function ChoiceBoard() {
             <div className="my-auto">
               <div className="text-center">
                 <div className="mb-10">
-                  <H3>{t('Which one would you like to choose?')} </H3>
+                  <h3>{t('Which one would you like to choose?')} </h3>
                 </div>
               </div>
               <div className="grid grid-cols-2 text-center">
