@@ -55,7 +55,7 @@ $ npm install
 ```
 When the dependencies have all been installed, you're ready to run the application:
 ```
-$ npm run start
+$ npm run dev
 ```
 *Important: make sure you have [NPM](https://www.npmjs.com/get-npm) installed in your machine.*
 
