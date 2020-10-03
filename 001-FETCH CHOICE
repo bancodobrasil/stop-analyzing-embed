@@ -1,0 +1,15 @@
+$.ajax({
+       url: _spPageContextInfo.webAbsoluteUrl + "_api/web/lists/GetByTitle('Questions')/fields?$filter=EntityPropertyName eq 'Status'",
+        type: "GET",
+        headers: {
+            "accept": "application/json;odata=verbose",
+        },
+        success: function (data) {
+            console.log(data.d.results[0].Choices.results);
+
+        },
+        error: function (error) {
+            alert(JSON.stringify(error));
+        }
+
+    });    
