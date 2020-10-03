@@ -1,0 +1,25 @@
+var url = "/_api/web/lists/getbytitle('Questions')/items?$select=choiceCol";
+
+getItems(url).then(getItemsSuccess, getItemsFail);
+
+function getItems(url){
+    return $.ajax({
+        url: _spPageContextInfo.webAbsoluteUrl + url,
+        type: "GET",
+        headers: {
+            "accept": "application/json;odata=verbose",
+        }
+    });
+}
+
+function getItemsSuccess(data){
+    var result = data.d.results; // set value of result variable 
+    $.each(result, function(key, value){
+        console.log(value.choiceCol);   // access the choice field value
+    });
+}
+
+function getItemsFail(err){
+    // error callback
+    debugger;
+}
