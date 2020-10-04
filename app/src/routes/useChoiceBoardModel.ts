@@ -1,15 +1,39 @@
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 
 export default () => {
   // Selected Items
   const [selectedItems, setSelectedItems] = useState([]);
 
   // Initial choices
-  const initialOptions = [];
-  // useEffect(async () => {
-  //  const response = await fetch(process.env.REACT_APP_BACKEND_URL);
-  //  initialOptions = [response.body.choices[0], response.body.choices[1]];
-  // })
+  
+  /*useEffect(async () => {
+   const response = await fetch(process.env.REACT_APP_BACKEND_URL);
+    initialOptions = [response.body.choices[0], response.body.choices[1]];
+   })*/
+   
+  //fetching the random user details for initial choices 
+let url = "https://randomuser.me/api/?results=5";
+   const  [initialOptions,setInitialOptions]= useState([]);
+    
+
+
+  useEffect(() =>{
+
+    const fetchData=async()=>{
+      await fetch(url)
+      .then((response)=>response.json())
+      .then((data) => {
+        setInitialOptions(data)
+      })
+      
+    }
+    fetchData(); 
+  },[]);
+console.log(initialOptions)
+
+
+
+
 
   // All choices
   // eslint-disable-next-line
