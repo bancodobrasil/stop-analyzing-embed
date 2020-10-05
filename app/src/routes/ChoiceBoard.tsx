@@ -51,6 +51,7 @@ function ChoiceBoard() {
   };
 
   const dismissButtonLabel = "I don't like either 🤔. Next, please!";
+  var headLine = "Which one would you like to choose?";
 
   const handleDismiss = (event: MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
@@ -84,7 +85,7 @@ function ChoiceBoard() {
             <div className="my-auto">
               <div className="text-center">
                 <div className="mb-10">
-                  <h3>{t('Which one would you like to choose?')} </h3>
+                  <h3>{t(headLine)} </h3>
                 </div>
               </div>
               <div className="grid grid-cols-2 text-center">
