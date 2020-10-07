@@ -1,0 +1,18 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Mock-Server",
+    "main": "index.js",
+    "scripts": {
+      "start": "node mock-server/index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ashkan",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "express": "^4.17.1"
+    }
+  }
+  
