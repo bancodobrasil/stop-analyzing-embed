@@ -32,3 +32,8 @@ code {
   /* border: solid 1px blue; */
   min-height: 600px;
 }
+
+.choice-card-container {
+  color: red;
+  background-color: yellow;
+}

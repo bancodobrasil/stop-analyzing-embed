@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react';
+require('./ChoiceCard.css')
 
 export type ChoiceCardProps = {
   /** card identifier */
@@ -107,7 +108,7 @@ function ChoiceCard({
       <>
         {imageURL && imageALT && (
           <img
-            className="w-full object-cover"
+            className="w-full object-cover image-container"
             style={{ maxHeight: '400px' }}
             src={imageURL}
             alt={imageALT}
@@ -148,13 +149,13 @@ function ChoiceCard({
   return (
     <div
       role="region"
-      className="h-100 border-0 bg-transparent"
+      className="h-100 border-0 choice-card-container"
       onClick={onCardClick}
       id={id}
       style={{ backfaceVisibility: 'hidden' }}
     >
       <div
-        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
+        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white image-container"
         style={{ borderRadius: '1rem' }}
       >
         {image}
