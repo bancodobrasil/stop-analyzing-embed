@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { KeyboardEvent, MouseEvent } from 'react';
 
 export type ChoiceCardProps = {
   /** card identifier */
@@ -117,7 +117,7 @@ function ChoiceCard({
     );
   }
 
-  const onCardClick = (event: MouseEvent) => {
+  const onCardClick = (event: MouseEvent | KeyboardEvent) => {
     if (!buttonLabel && onClick) {
       onClick(event, {
         id,
@@ -128,6 +128,13 @@ function ChoiceCard({
         elementsPlacement,
         buttonLabel,
       });
+    }
+  };
+
+  const onCardKeydown = (event: KeyboardEvent) => {
+    // Support keyboard accessibility by emulating mouse click on ENTER or SPACE keypress
+    if (event.key === 'ENTER' || event.key === 'SPACE') {
+      onCardClick(event);
     }
   };
 
@@ -149,13 +156,16 @@ function ChoiceCard({
     <div
       role="region"
       className="h-100 border-0 bg-transparent"
-      onClick={onCardClick}
       id={id}
       style={{ backfaceVisibility: 'hidden' }}
     >
       <div
         className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
         style={{ borderRadius: '1rem' }}
+        tabIndex={0}
+        onKeyDown={onCardKeydown}
+        onClick={onCardClick}
+        role="button"
       >
         {image}
         {title && <div className="font-bold text-2xl py-2">{title}</div>}
