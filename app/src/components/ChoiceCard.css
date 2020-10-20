@@ -1,9 +1,7 @@
 .choice-card-container:hover {
-  background-color: black;
   cursor: pointer;
-  border-radius: 16px;
 }
 
-.choice-card-container:hover .image-container{
-  opacity: 0.7;  
+.image-container:hover{
+  filter: brightness(0.7);  
 }
