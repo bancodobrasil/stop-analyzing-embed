@@ -35,29 +35,6 @@ export type ChoiceCardProps = {
   ariaLabel?: string;
 };
 
-// const CardWrapper = styled.div`
-//     width: 100%;
-// `;
-
-// const H2 = styled.h2`
-//     font-size: 1.5rem;
-//     font-weight: 700;
-//     line-height: 2;
-//     color: #59cd90;
-// `;
-
-// const IMG = styled.img`
-//   width: 100%;
-//   height: 400px;
-// `;
-
-// const Para = styled.p`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 2rem;
-//     color: #59cd90;
-// `;
 
 function ChoiceCard({
   id,
