@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { KeyboardEvent, MouseEvent } from 'react';
 require('./ChoiceCard.css')
 
 export type ChoiceCardProps = {
@@ -36,29 +36,6 @@ export type ChoiceCardProps = {
   ariaLabel?: string;
 };
 
-// const CardWrapper = styled.div`
-//     width: 100%;
-// `;
-
-// const H2 = styled.h2`
-//     font-size: 1.5rem;
-//     font-weight: 700;
-//     line-height: 2;
-//     color: #59cd90;
-// `;
-
-// const IMG = styled.img`
-//   width: 100%;
-//   height: 400px;
-// `;
-
-// const Para = styled.p`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 2rem;
-//     color: #59cd90;
-// `;
 
 function ChoiceCard({
   id,
@@ -118,7 +95,7 @@ function ChoiceCard({
     );
   }
 
-  const onCardClick = (event: MouseEvent) => {
+  const onCardClick = (event: MouseEvent | KeyboardEvent) => {
     if (!buttonLabel && onClick) {
       onClick(event, {
         id,
@@ -129,6 +106,13 @@ function ChoiceCard({
         elementsPlacement,
         buttonLabel,
       });
+    }
+  };
+
+  const onCardKeydown = (event: KeyboardEvent) => {
+    // Support keyboard accessibility by emulating mouse click on ENTER or SPACE keypress
+    if (event.key === 'ENTER' || event.key === 'SPACE') {
+      onCardClick(event);
     }
   };
 
@@ -150,13 +134,16 @@ function ChoiceCard({
     <div
       role="region"
       className="h-100 border-0 choice-card-container"
-      onClick={onCardClick}
       id={id}
       style={{ backfaceVisibility: 'hidden' }}
     >
       <div
         className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white image-container"
         style={{ borderRadius: '1rem' }}
+        tabIndex={0}
+        onKeyDown={onCardKeydown}
+        onClick={onCardClick}
+        role="button"
       >
         {image}
         {title && <div className="font-bold text-2xl py-2">{title}</div>}
