@@ -16,10 +16,7 @@
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
-    "typescript": "^3.8.0",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "typescript": "^3.8.0"
   },
   "scripts": {
     "build": "NODE_ENV=production REACT_APP_BACKEND_URL=BUILD_APP_BACKEND_URL  npm run build:css && react-scripts build",
