@@ -1,4 +1,5 @@
 import React, { KeyboardEvent, MouseEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export type ChoiceCardProps = {
   /** card identifier */
@@ -47,6 +48,9 @@ function ChoiceCard({
   onClick,
   ariaLabel,
 }: ChoiceCardProps) {
+
+  const { t } = useTranslation();
+
   let subParagraph = (
     <>
       {paragraph && (
@@ -137,7 +141,7 @@ function ChoiceCard({
       style={{ backfaceVisibility: 'hidden' }}
     >
       <div
-        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white"
+        className="max-w-sm overflow-hidden shadow-lg m-auto w-full h-100 bg-white relative group"
         style={{ borderRadius: '1rem' }}
         tabIndex={0}
         onKeyDown={onCardKeydown}
@@ -156,6 +160,14 @@ function ChoiceCard({
             {buttonLabel}
           </button>
         )}
+        <div
+          className="hidden group-hover:block absolute top-0 h-full w-full cursor-pointer"
+          style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}
+        >
+          <div className=" font-bold text-2xl text-white block relative top-1/2">
+            {t('Choose')}
+          </div>
+        </div>
       </div>
     </div>
   );
