@@ -36,7 +36,6 @@ export type ChoiceCardProps = {
   ariaLabel?: string;
 };
 
-
 function ChoiceCard({
   id,
   title,
@@ -48,7 +47,6 @@ function ChoiceCard({
   onClick,
   ariaLabel,
 }: ChoiceCardProps) {
-
   const { t } = useTranslation();
 
   let subParagraph = (
@@ -162,7 +160,7 @@ function ChoiceCard({
         )}
         <div
           className="hidden group-hover:block absolute top-0 h-full w-full cursor-pointer"
-          style={{backgroundColor: 'rgba(0, 0, 0, 0.4)'}}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
         >
           <div className=" font-bold text-2xl text-white block relative top-1/2">
             {t('Choose')}
