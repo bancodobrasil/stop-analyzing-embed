@@ -2,14 +2,11 @@ import anime from 'animejs/lib/anime';
 import React, { MouseEvent, Suspense, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-
 import image1 from '../assets/images/andrew-johnson-ULKR-8CtHmM-unsplash.jpg';
 import image2 from '../assets/images/providence-doucet-FjwtL3YSZ9U-unsplash.jpg';
 import ChoiceCard from '../components/ChoiceCard';
 import DismissButton from '../components/DismissButton';
 import useChoiceBoardModel from './useChoiceBoardModel';
-
-
 
 function ChoiceBoard() {
   const { t } = useTranslation();
