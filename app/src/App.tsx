@@ -14,7 +14,9 @@ function App() {
           </Route>
           <Route path="/">
             <Suspense fallback="loading">
-              <ChoiceBoard />
+              <ChoiceBoard 
+                headLine=""
+              />
             </Suspense>
           </Route>
         </Switch>
