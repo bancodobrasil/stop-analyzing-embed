@@ -12,7 +12,7 @@ type ChoiceBoardProps = {
   headLine?: string;
 };
 
-function ChoiceBoard({headLine}: ChoiceBoardProps) {
+function ChoiceBoard({ headLine }: ChoiceBoardProps) {
   const { t } = useTranslation();
   // eslint-disable-next-line
   const { selectedItems, appendSelection } = useChoiceBoardModel();
@@ -78,7 +78,9 @@ function ChoiceBoard({headLine}: ChoiceBoardProps) {
             <div className="my-auto">
               <div className="text-center">
                 <div className="mb-10">
-                  <h3>{t(headLine || "Which one would you like to choose?")} </h3>
+                  <h3>
+                    {t(headLine || 'Which one would you like to choose?')}
+                  </h3>
                 </div>
               </div>
               <div className="grid grid-cols-2 text-center">
