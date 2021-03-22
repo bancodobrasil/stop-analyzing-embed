@@ -1,0 +1,20 @@
+# Mock Server
+
+## Start Server
+
+```
+npm install
+```
+
+Create .env file with this info
+
+```
+DB_HOST=xx.xx.xx.xx
+DB_USER=xxx
+DB_PASS=xxx
+DB_BASE=xxx
+```
+
+```
+npm start
+```
