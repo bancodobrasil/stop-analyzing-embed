@@ -7,7 +7,7 @@
       "subtitle": "Colored nice Shirt",
       "contentURL": "https://lorempixel.com/640/480/",
       "attributes": [
-        {
+        { 
           "size": "S",
           "color": "multiple"
         }
@@ -22,6 +22,30 @@
         {
           "size": "S",
           "color": "black"
+        }
+      ]
+    },
+    {
+      "id": "5f358359ccb4180025ee98xy",
+      "title": "Half Sleeved Shirt",
+      "subtitle": "Corporate half sleeved Shirt",
+      "contentURL": "https://lorempixel.com/640/480/",
+      "attributes": [
+        {
+          "size": "M",
+          "color": "multiple"
+        }
+      ]
+    },
+    {
+      "id": "5f358359ccb4180025ee98an",
+      "title": "Full Sleeved Shirt",
+      "subtitle": "Corporate full sleeved Shirt",
+      "contentURL": "https://lorempixel.com/640/480/",
+      "attributes": [
+        {
+          "size": "L",
+          "color": "all"
         }
       ]
     }
