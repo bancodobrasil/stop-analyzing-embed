@@ -1,15 +1,20 @@
 import { useState } from 'react';
 
+import useOptions from '../hooks/useOptions';
+import { Option } from '../types';
+
 export default () => {
+  const { isLoading, isError, data: options, error } = useOptions();
+
   // Selected Items
   const [selectedItems, setSelectedItems] = useState([]);
 
-  // Initial choices
-  const initialOptions = [];
-  // useEffect(async () => {
-  //  const response = await fetch(process.env.REACT_APP_BACKEND_URL);
-  //  initialOptions = [response.body.choices[0], response.body.choices[1]];
-  // })
+  // Initial Options
+  let initialOptions: Option[] = [];
+
+  if (options) {
+    initialOptions = [options[0], options[1]];
+  }
 
   // All choices
   // eslint-disable-next-line
